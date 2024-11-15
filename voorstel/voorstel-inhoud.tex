@@ -1,0 +1,105 @@
+%---------- Inleiding ---------------------------------------------------------
+
+% TODO: Is dit voorstel gebaseerd op een paper van Research Methods die je
+% vorig jaar hebt ingediend? Heb je daarbij eventueel samengewerkt met een
+% andere student?
+% Zo ja, haal dan de tekst hieronder uit commentaar en pas aan.
+
+%\paragraph{Opmerking}
+
+% Dit voorstel is gebaseerd op het onderzoeksvoorstel dat werd geschreven in het
+% kader van het vak Research Methods dat ik (vorig/dit) academiejaar heb
+% uitgewerkt (met medesturent VOORNAAM NAAM als mede-auteur).
+% 
+
+\section{Inleiding}%
+\label{sec:inleiding}
+
+De IT-sector wordt steeds vaker geconfronteerd met complexe beveiligingsuitdagingen, ook in hybride cloudomgevingen. Traditionele netwerkbeveiligingsmodellen, die vertrouwen op perimeterbescherming, zijn niet langer toereikend in een tijdperk waarin remote werken, multi-cloudgebruik, en gevoelige data-uitwisseling standaard zijn. Zero Trust is een beveiligingsstrategie die steeds meer aandacht krijgt, omdat het uitgaat van het principe “never trust, always verify”, en de toegang tot resources strikt beperkt op basis van identiteit en context.  
+
+InThePocket, een technologiebedrijf gespecialiseerd in digitale producten, wil als best practice een Zero Trust Netwerkarchitectuur en een least privileged access model implementeren. Dit dient niet alleen om gevoelige klantendata beter te beschermen, maar ook om te voldoen aan moderne IT-veiligheidsstandaarden die passen bij hun rol als innovatief technologiebedrijf.  
+ 
+De primaire doelgroep van deze bachelorproef is het interne sysops-team van InThePocket, dat verantwoordelijk is voor de infrastructuur en beveiliging van hun IT-systemen. Secundair is het onderzoek relevant voor IT-professionals die verantwoordelijk zijn voor de implementatie van Zero Trust in vergelijkbare omgevingen.
+
+Hoewel InThePocket geen acuut beveiligingsprobleem ervaart, willen zij anticiperen op toekomstige risico’s en voldoen aan de best practices voor IT-beveiliging. De vraag die centraal staat in dit onderzoek is:  
+"Hoe kan een Zero Trust Netwerkarchitectuur en een least privileged access model worden geïmplementeerd binnen de hybride cloudomgeving van InThePocket".
+Het doel van deze bachelorproef is om een praktische invulling te geven aan Zero Trust binnen InThePocket. Het onderzoek richt zich op:
+\begin{itemize}
+  \item Een analyse van de huidige IT-omgeving bij InThePocket.
+  \item Het identificeren van essentiële componenten en technologieën voor Zero Trust.
+  \item Het ontwerpen en implementeren van een proof of concept die dient als blauwdruk voor toekomstige implementaties.
+\end{itemize}
+
+Een succesvol resultaat wordt behaald als er een concreet PoC wordt opgeleverd dat technisch functioneel is en aansluit bij de behoeften van het bedrijf, samen met een rapport waarin aanbevelingen worden gedaan voor de schaalbare implementatie van Zero Trust.
+
+%---------- Stand van zaken ---------------------------------------------------
+
+\section{Literatuurstudie}%
+\label{sec:literatuurstudie}
+
+% Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+
+% Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+
+% Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+
+%Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+
+% Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+
+Zero Trust is een steeds belangrijker wordend model voor netwerkbeveiliging, vooral in omgevingen waar gevoelige data verwerkt wordt, zoals bij InThePocket. Het model is gebaseerd op de stelling dat geen enkel apparaat, gebruiker of systeem automatisch te vertrouwen is, zelfs niet als deze zich binnen het netwerk bevinden. De nadruk ligt op het continu verifiëren van gebruikersidentiteit, het beperken van toegang tot strikt noodzakelijke bronnen (least privileged access), en het monitoren van netwerkactiviteiten om verdachte handelingen snel te identificeren en aan te pakken.
+
+Volgens Microsoft is de kern van het Zero Trust-model gebaseerd op drie belangrijke principes: altijd verifiëren, nooit vertrouwen; minimaal toegang verlenen; en schade beperken bij compromittering. Dit houdt in dat de toegang tot systemen of data niet alleen wordt beperkt op basis van de locatie van de gebruiker of het apparaat, maar altijd afhangt van de identiteit, rol en andere specifieke toegangsbeperkingen die aan de gebruiker of het apparaat gekoppeld zijn. Dit is vooral belangrijk in hybride cloudomgevingen waar gebruikers en apparaten zich niet altijd binnen de traditionele netwerkperimeter bevinden​~\autocite{Microsoft2024}.
+
+Kaspersky legt de focus op de technologieën die Zero Trust mogelijk maken, zoals multi-factor authenticatie (MFA), versleuteling van communicatie en geavanceerde netwerkmonitoringtools. Deze tools zorgen ervoor dat alleen geverifieerde gebruikers en apparaten toegang krijgen tot gevoelige informatie, terwijl ongeautoriseerde toegang snel wordt gedetecteerd en geblokkeerd. Het doel van Zero Trust is om de beveiliging van systemen te versterken, zelfs als een aanvaller erin slaagt om een systeem binnen te dringen​~\autocite{Kaspersky2024}.
+
+De implementatie van Zero Trust vereist zorgvuldige planning, vooral in complexe netwerkomgevingen. De uitdaging ligt niet alleen in het kiezen van de juiste technologieën, maar ook in het integreren van deze technologieën met bestaande systemen zonder de operationele efficiëntie in gevaar te brengen​​~\autocite{Kaspersky2024}.
+Het onderzoek naar Zero Trust in de context van InThePocket zal helpen om de beste benaderingen en tools te identificeren voor de implementatie van dit beveiligingsmodel, en biedt tegelijkertijd inzichten in hoe bedrijven hun netwerkbeveiliging kunnen verbeteren in een tijd van groeiende cyberdreigingen.
+
+% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
+% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
+%   geen onderdeel is van de zin.
+% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
+%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
+%   ...'')
+
+% Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+
+%---------- Methodologie ------------------------------------------------------
+% \section{Methodologie}%
+% \label{sec:methodologie}
+
+% Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+
+%Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+
+%Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+
+%Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+
+%Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+
+%Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+
+%---------- Verwachte resultaten ----------------------------------------------
+\section{Verwacht resultaat, conclusie}%
+\label{sec:verwachte_resultaten}
+
+%Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+
+%Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+
+%Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+
+Het belangrijkste verwachte resultaat is het succesvol opzetten van een Proof of Concept (PoC) dat laat zien hoe Zero Trust geïmplementeerd kan worden binnen de bestaande infrastructuur van InThePocket. Het PoC zal bestaan uit een werkende configuratie van Zero Trust-principes, inclusief:
+\begin{itemize}
+  \item Het aantonen hoe toegang tot netwerken, applicaties en systemen strikt wordt gecontroleerd via authenticatie en autorisatie.
+  \item Implementatie van het least privileged access-model, waarbij gebruikers en systemen alleen toegang krijgen tot de middelen die ze absoluut nodig hebben om hun taken uit te voeren.
+\end{itemize}
+De vergelijkende studie van verschillende Zero Trust-oplossingen zal als resultaat een lijst van aanbevolen tools opleveren die geschikt zijn voor de hybride cloudomgeving van InThePocket.
+Verwachte resultaten hiervan zijn:
+\begin{itemize}
+  \item Een lijst van geverifieerde tools die voldoen aan de eisen van InThePocket
+  \item Een kosten-batenanalyse van de verschillende oplossingen, waarbij gekeken wordt naar integratiegemak, prestaties, en kosten in verhouding tot de voordelen.
+\end{itemize}
+De belangrijkste meerwaarde van het onderzoek voor InThePocket is de versterking van hun interne beveiliging. In de praktijk zal dit resulteren in een meer robuust beveiligingsmodel, wat niet alleen de integriteit van klantgegevens waarborgt, maar ook bijdraagt aan het voldoen aan regelgeving en het verbeteren van de algehele netwerkbeveiliging.
