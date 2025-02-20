@@ -15,28 +15,45 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-De IT-sector wordt steeds vaker geconfronteerd met complexe beveiligingsuitdagingen, ook in hybride cloudomgevingen. Traditionele netwerkbeveiligingsmodellen, die vertrouwen op perimeterbescherming, zijn niet langer toereikend in een tijdperk waarin remote werken, multi-cloudgebruik, en gevoelige data-uitwisseling standaard zijn. Zero Trust is een beveiligingsstrategie die steeds meer aandacht krijgt, omdat het uitgaat van het principe “never trust, always verify”, en de toegang tot resources strikt beperkt op basis van identiteit en context.  
+De IT-sector wordt steeds vaker geconfronteerd met complexe beveiligingsuitdagingen, ook in hybride cloudomgevingen. 
+Traditionele netwerkbeveiligingsmodellen, die vertrouwen op perimeterbescherming (waarbij de beveiliging zich vooral richt op het bewaken van de netwerkgrenzen via firewalls en VPNs), zijn niet langer toereikend in een tijdperk waarin remote werken, multi-cloud gebruik en gevoelige data-uitwisseling standaard zijn. 
+Zero Trust is een beveiligingsstrategie die steeds meer aandacht krijgt, omdat het uitgaat van het principe "never trust, always verify", en de toegang tot resources strikt beperkt op basis van identiteit en context.
 
-InThePocket, een technologiebedrijf gespecialiseerd in digitale producten, wil als best practice een Zero Trust Netwerkarchitectuur en een least privileged access model implementeren. Dit dient niet alleen om gevoelige klantendata beter te beschermen, maar ook om te voldoen aan moderne IT-veiligheidsstandaarden die passen bij hun rol als innovatief technologiebedrijf.  
- 
-De primaire doelgroep van deze bachelorproef is het interne sysops-team van InThePocket, dat verantwoordelijk is voor de infrastructuur en beveiliging van hun IT-systemen. Secundair is het onderzoek relevant voor IT-professionals die verantwoordelijk zijn voor de implementatie van Zero Trust in vergelijkbare omgevingen.
+Een software agency bedrijf gespecialiseerd in digitale producten, heeft gekozen voor Netskope als oplossing om een Zero Trust Netwerkarchitectuur en een least privileged access model te implementeren. 
+Deze keuze voor Netskope als Security Service Edge (SSE) platform dient niet alleen om gevoelige klantendata beter te beschermen, maar ook om te voldoen aan moderne IT-veiligheidsstandaarden die passen bij hun rol als innovatief technologiebedrijf.
+De primaire doelgroep van deze bachelorproef is het interne sysops-team van het bedrijf, dat verantwoordelijk is voor de infrastructuur en beveiliging van hun IT-systemen. 
+Secundair is het onderzoek relevant voor IT-professionals die verantwoordelijk zijn voor de implementatie van Zero Trust in vergelijkbare omgevingen.
 
-Hoewel InThePocket geen acuut beveiligingsprobleem ervaart, willen zij anticiperen op toekomstige risico’s en voldoen aan de best practices voor IT-beveiliging. De vraag die centraal staat in dit onderzoek is:  
-"Hoe kan een Zero Trust Netwerkarchitectuur en een least privileged access model worden geïmplementeerd binnen de hybride cloudomgeving van InThePocket".
-Het doel van deze bachelorproef is om een praktische invulling te geven aan Zero Trust binnen InThePocket. Het onderzoek richt zich op:
+Hoewel het bedrijf geen acuut beveiligingsprobleem ervaart, willen zij anticiperen op toekomstige risico's en voldoen aan de best practices voor IT-beveiliging.
+De vraag die centraal staat in dit onderzoek is: "Hoe kan een Zero Trust Netwerkarchitectuur en een least privileged access model worden geïmplementeerd binnen de hybride cloudomgeving van een software agency bedrijf gebruikmakend van het Netskope platform?"
+
+Om deze hoofdvraag te beantwoorden, wordt het onderzoek opgedeeld in volgende deelvragen:
+Probleemdomein:
 \begin{itemize}
-  \item Een analyse van de huidige IT-omgeving bij InThePocket.
-  \item Het identificeren van essentiële componenten en technologieën voor Zero Trust.
+  \item Welke security-risico's bestaan er in de huidige IT-infrastructuur van het bedrijf die met Netskope's Zero Trust features aangepakt kunnen worden?
+  \item Welke security gaps bestaan er in de huidige perimeter-based beveiliging die Netskope moet oplossen?
+  \item Hoe verhouden de huidige beveiligingsmaatregelen zich tot de mogelijkheden die Netskope biedt?
+\end{itemize}
+
+Oplossingsdomein:
+\begin{itemize}
+  \item Welke Netskope componenten zijn essentieel voor een succesvolle Zero Trust implementatie?
+  \item Hoe kan Netskope optimaal geconfigureerd worden voor de hybride cloudomgeving van het bedrijf?
+  \item Hoe kan een least privileged access model worden geïmplementeerd via Netskope's policy engine?
+  \item Welke integraties tussen Netskope en bestaande systemen zijn nodig?
+  \item Hoe kan de effectiviteit van de Netskope implementatie worden gevalideerd?
+\end{itemize}
+
+Het doel van deze bachelorproef is om een praktische invulling te geven aan Zero Trust binnen een software agency bedrijf. Om deze deelvragen te beantwoorden richt het onderzoek zich op drie hoofdaspecten:
+\begin{itemize}
+  \item Een grondige analyse van de huidige IT-omgeving bij het bedrijf en de bijhorende security-risico's.
+  \item Het identificeren van essentiële Netskope componenten en configuraties die aansluiten bij de specifieke context van het bedrijf.
   \item Het ontwerpen en implementeren van een proof of concept die dient als blauwdruk voor toekomstige implementaties.
 \end{itemize}
 
-Een succesvol resultaat wordt behaald als er een concreet PoC wordt opgeleverd dat technisch functioneel is en aansluit bij de behoeften van het bedrijf, samen met een rapport waarin aanbevelingen worden gedaan voor de schaalbare implementatie van Zero Trust.
+Een succesvol resultaat wordt behaald als er een concreet PoC wordt opgeleverd dat technisch functioneel is en aansluit bij de behoeften van het bedrijf, samen met een rapport waarin aanbevelingen worden gedaan voor de schaalbare implementatie van Zero Trust met Netskope.
 
 %---------- Stand van zaken ---------------------------------------------------
-
-\section{Literatuurstudie}%
-\label{sec:literatuurstudie}
-
 % Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
 
 % Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
@@ -47,15 +64,61 @@ Een succesvol resultaat wordt behaald als er een concreet PoC wordt opgeleverd d
 
 % Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
 
-Zero Trust is een steeds belangrijker wordend model voor netwerkbeveiliging, vooral in omgevingen waar gevoelige data verwerkt wordt, zoals bij InThePocket. Het model is gebaseerd op de stelling dat geen enkel apparaat, gebruiker of systeem automatisch te vertrouwen is, zelfs niet als deze zich binnen het netwerk bevinden. De nadruk ligt op het continu verifiëren van gebruikersidentiteit, het beperken van toegang tot strikt noodzakelijke bronnen (least privileged access), en het monitoren van netwerkactiviteiten om verdachte handelingen snel te identificeren en aan te pakken.
+\section{Literatuurstudie}%
+\label{sec:literatuurstudie}
 
-Volgens Microsoft is de kern van het Zero Trust-model gebaseerd op drie belangrijke principes: altijd verifiëren, nooit vertrouwen; minimaal toegang verlenen; en schade beperken bij compromittering. Dit houdt in dat de toegang tot systemen of data niet alleen wordt beperkt op basis van de locatie van de gebruiker of het apparaat, maar altijd afhangt van de identiteit, rol en andere specifieke toegangsbeperkingen die aan de gebruiker of het apparaat gekoppeld zijn. Dit is vooral belangrijk in hybride cloudomgevingen waar gebruikers en apparaten zich niet altijd binnen de traditionele netwerkperimeter bevinden​~\autocite{Microsoft2024}.
+Zero Trust is een steeds belangrijker wordend model voor netwerkbeveiliging, vooral in omgevingen waar gevoelige data verwerkt wordt. 
+Het model is gebaseerd op de stelling dat geen enkel apparaat, gebruiker of systeem automatisch te vertrouwen is, zelfs niet als deze zich binnen het netwerk bevinden. 
+De nadruk ligt op het continu verifiëren van gebruikersidentiteit, het beperken van toegang tot strikt noodzakelijke bronnen (least privileged access), en het monitoren van netwerkactiviteiten om verdachte handelingen snel te identificeren en aan te pakken.
 
-Kaspersky legt de focus op de technologieën die Zero Trust mogelijk maken, zoals multi-factor authenticatie (MFA), versleuteling van communicatie en geavanceerde netwerkmonitoringtools. Deze tools zorgen ervoor dat alleen geverifieerde gebruikers en apparaten toegang krijgen tot gevoelige informatie, terwijl ongeautoriseerde toegang snel wordt gedetecteerd en geblokkeerd. Het doel van Zero Trust is om de beveiliging van systemen te versterken, zelfs als een aanvaller erin slaagt om een systeem binnen te dringen​~\autocite{Kaspersky2024}.
+Netskope, het platform dat het bedrijf heeft gekozen voor hun Zero Trust implementatie, definieert Zero Trust als een beveiligingsmodel waarbij niemand blind vertrouwd wordt binnen het netwerk of toegang krijgt tot resources, applicaties of data totdat ze gevalideerd zijn als legitieme gebruiker met een legitieme behoefte~\autocite{Netskope2020}. Hun Security Service Edge (SSE) architectuur implementeert deze principes via een data-centrische aanpak gebaseerd op zes kernpijlers:
 
-De implementatie van Zero Trust vereist zorgvuldige planning, vooral in complexe netwerkomgevingen. De uitdaging ligt niet alleen in het kiezen van de juiste technologieën, maar ook in het integreren van deze technologieën met bestaande systemen zonder de operationele efficiëntie in gevaar te brengen​​~\autocite{Kaspersky2024}.
-Het onderzoek naar Zero Trust in de context van InThePocket zal helpen om de beste benaderingen en tools te identificeren voor de implementatie van dit beveiligingsmodel, en biedt tegelijkertijd inzichten in hoe bedrijven hun netwerkbeveiliging kunnen verbeteren in een tijd van groeiende cyberdreigingen.
+\begin{itemize}
+  \item User \& Device: Authenticatie en autorisatie van gebruikers en apparaten
+  \item Network \& Environment: Segmentatie en toegangscontrole op netwerkniveau
+  \item Application \& Workload: Applicatie-specifieke toegangscontrole en monitoring
+  \item Data: Databescherming en classificatie
+  \item Visibility \& Analytics: Continue monitoring en gedragsanalyse
+  \item Automation \& Orchestration: Geautomatiseerde response en integratie
+\end{itemize}
 
+Volgens Microsoft is de kern van het Zero Trust-model gebaseerd op drie belangrijke principes: altijd verifiëren, nooit vertrouwen; minimaal toegang verlenen; en schade beperken bij inbreuk. Dit houdt in dat de toegang tot systemen of data niet alleen wordt beperkt op basis van de locatie van de gebruiker of het apparaat, maar altijd afhangt van de identiteit, rol en andere specifieke toegangsbeperkingen~\autocite{Microsoft2024}. Netskope implementeert deze principes via een gelaagde aanpak met Policy Enforcement Points (PEPs) op drie niveaus:
+
+\begin{itemize}
+  \item Network/Resource PEP: Controleert netwerktoegang en basiscommunicatie
+  \item Application PEP: Beheert toegang tot specifieke applicaties en workloads
+  \item Data PEP: Zorgt voor databescherming en compliance
+\end{itemize}
+
+Kaspersky benadrukt het belang van de technologieën die Zero Trust mogelijk maken, zoals multi-factor authenticatie (MFA), versleuteling van communicatie en geavanceerde netwerkmonitoringtools~\autocite{Kaspersky2024}. Netskope's platform integreert deze technologieën in een uitgebreid security framework dat onder andere bestaat uit:
+
+\begin{itemize}
+  \item Device en user authenticatie via een client certificaat infrastructuur
+  \item TLS-beveiligde tunneling voor alle communicatie
+  \item Data Loss Prevention (DLP) met meer dan 3000 data identifiers en 1400 bestandstypes
+  \item Machine learning-gebaseerde User and Entity Behavior Analytics (UEBA)
+  \item Real-time threat protection met meer dan 40 threat intelligence feeds
+\end{itemize}
+
+De implementatie van Zero Trust vereist zorgvuldige planning, vooral in complexe netwerkomgevingen.
+
+Uit onderzoek van MIT Lincoln Laboratory blijkt dat Zero Trust-architecturen bijzonder effectief zijn tegen insiderdreigingen, zoals misbruik van gecompromitteerde credentials of onbevoegde toegang door eigen medewerkers. 
+Dit risico is relevant voor het onderzochte bedrijf, waar ontwikkelaars en externe partners toegang hebben tot gevoelige klantdata. 
+MIT benadrukt dat een succesvolle Zero Trust-implementatie niet alleen technologische verandering vereist (zoals granular access control), maar ook organisatorische aanpassingen, zoals het trainen van medewerkers en het opstellen van duidelijk beleid voor toegangsverificatie. 
+Dit sluit aan bij Netskope’s focus op User \& Device workflows en gedragsanalyse, waarbij continue verificatie van gebruikers en apparaten centraal staat. 
+Tegelijkertijd waarschuwt MIT voor de complexiteit van hybride implementaties, waarbij on-premises systemen en clouddiensten geïntegreerd moeten worden—een uitdaging die het bedrijf direct ondervindt en waar Netskope’s SSE-platform een antwoord op biedt.~\autocite{MIT2022}
+
+Netskope biedt hiervoor een gestructureerde aanpak met specifieke operationele workflows:
+
+\begin{itemize}
+  \item User/Device workflow voor initiële authenticatie en continue validatie
+  \item Network/Resource workflow voor toegangscontrole en segmentatie
+  \item Data Protection workflow voor databescherming en compliance
+\end{itemize}
+
+Deze workflows worden ondersteund door een automation engine die continue monitoring uitvoert op zeven dimensies van gebruikersactiviteit: tijd, dag, locatie, apparaat, service, activiteit en object. Dit zorgt voor een dynamische beveiligingsposture die zich aanpast aan veranderende omstandigheden en dreigingen~\autocite{Netskope2020}.
+
+Deze literatuurstudie toont aan dat de keuze van het bedrijf voor Netskope aansluit bij moderne best practices voor Zero Trust implementatie. Het platform biedt niet alleen de technische capabilities voor robuuste beveiliging, maar ook de flexibiliteit en schaalbaarheid die nodig zijn voor een hybride cloudomgeving. De gelaagde aanpak met specifieke PEPs en geautomatiseerde workflows zorgt voor een balans tussen strikte beveiliging en operationele efficiëntie.
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
 %   geen onderdeel is van de zin.
@@ -66,9 +129,6 @@ Het onderzoek naar Zero Trust in de context van InThePocket zal helpen om de bes
 % Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
 
 %---------- Methodologie ------------------------------------------------------
-% \section{Methodologie}%
-% \label{sec:methodologie}
-
 % Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
 
 %Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
@@ -81,25 +141,172 @@ Het onderzoek naar Zero Trust in de context van InThePocket zal helpen om de bes
 
 %Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
 
-%---------- Verwachte resultaten ----------------------------------------------
-\section{Verwacht resultaat, conclusie}%
-\label{sec:verwachte_resultaten}
+\section{Methodologie}%
+\label{sec:methodologie}
 
+Dit onderzoek volgt een systematische aanpak die bestaat uit drie hoofdfasen: literatuuronderzoek, technische analyse, en proof of concept ontwikkeling. De totale onderzoeksduur bedraagt 14 weken.
+
+\subsection{Fase 1: Literatuuronderzoek (3 weken)}
+Deze fase richt zich op het verzamelen van theoretische kennis en best practices:
+\begin{itemize}
+  \item Week 1-2: 
+  \begin{itemize}
+    \item Analyse van Netskope's technische documentatie en architectuur
+    \item Bestudering van Netskope's Zero Trust Reference Architecture
+    \item Onderzoek naar best practices voor Netskope implementaties
+  \end{itemize}
+  \item Week 3: 
+  \begin{itemize}
+    \item Synthese van bevindingen
+    \item Opstellen van Netskope-specifiek implementatieplan
+  \end{itemize}
+  \item Deliverable: Implementatieplan met Netskope configuratierichtlijnen
+\end{itemize}
+
+\subsection{Fase 2: Technische analyse (4 weken)}
+
+\subsubsection{Security audit (2 weken)}
+\begin{itemize}
+  \item Week 1: 
+  \begin{itemize}
+    \item Analyse van huidige netwerkinfrastructuur voor Netskope integratie
+    \item Inventarisatie van te beveiligen resources en applicaties
+  \end{itemize}
+  \item Week 2:
+  \begin{itemize}
+    \item Assessment van integratiepunten voor Netskope
+    \item Identificatie van benodigde Policy Enforcement Points
+  \end{itemize}
+  \item Deliverable: Technisch rapport met integratievereisten
+\end{itemize}
+
+\subsubsection{Requirements analyse (2 weken)}
+\begin{itemize}
+  \item Analyse van gebruikersprofielen voor Netskope policies
+  \item Identificatie van kritieke applicaties en data flows
+  \item In kaart brengen van benodigde security policies
+  \item Deliverable: Requirements document voor Netskope configuratie
+\end{itemize}
+
+\subsection{Fase 3: Proof of Concept (7 weken)}
+
+\subsubsection{PoC Setup (4 weken)}
+Ontwikkeling van testomgeving met Netskope componenten:
+
+\begin{enumerate}
+  \item Week 1-2: Basis infrastructuur
+  \begin{itemize}
+    \item Opzetten Netskope tenant
+    \item Configuratie van Identity and Access Management
+    \item Implementatie van Netskope client op test endpoints
+  \end{itemize}
+
+  \item Week 3-4: Policy en Security configuratie
+  \begin{itemize}
+    \item Configuratie van Resource, Application en Data PEPs
+    \item Implementatie van security policies
+    \item Setup van monitoring en logging
+  \end{itemize}
+  \item Deliverable: Functionele Netskope PoC omgeving
+\end{enumerate}
+
+\subsubsection{PoC Validatie (3 weken)}
+\begin{itemize}
+  \item Week 1: Security testing
+  \begin{itemize}
+    \item Validatie van Zero Trust policies
+    \item Testing van MFA en toegangscontrole
+    \item DLP functionaliteit verificatie
+    \item Testing van dynamische toegangscontrole (‘trip wires’)
+  \end{itemize}
+  
+  \item Week 2: Performance testing
+  \begin{itemize}
+    \item Latency metingen van Netskope security cloud
+    \item End-user experience validatie
+    \item Resource impact analyse
+  \end{itemize}
+  
+  \item Week 3: Documentatie
+  \begin{itemize}
+    \item Opstellen van implementatiehandleiding
+    \item Documenteren van best practices
+    \item Voorbereiden eindrapportage
+  \end{itemize}
+  \item Deliverable: Validatierapport en implementatiedocumentatie
+\end{itemize}
+
+Deze methodologie is specifiek afgestemd op de implementatie van Zero Trust via het Netskope platform, waarbij elke fase concrete technische deliverables oplevert. De focus ligt op het correct configureren en valideren van Netskope's security features, met voldoende tijd voor iteratie en optimalisatie van de implementatie.
+
+%---------- Verwachte resultaten ----------------------------------------------
 %Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
 
 %Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
 
 %Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
 
-Het belangrijkste verwachte resultaat is het succesvol opzetten van een Proof of Concept (PoC) dat laat zien hoe Zero Trust geïmplementeerd kan worden binnen de bestaande infrastructuur van InThePocket. Het PoC zal bestaan uit een werkende configuratie van Zero Trust-principes, inclusief:
+\section{Verwacht resultaat, conclusie}%
+\label{sec:verwachte_resultaten}
+
+Het belangrijkste verwachte resultaat is het succesvol opzetten van een Proof of Concept (PoC) die demonstreert hoe Netskope's Zero Trust architectuur effectief kan worden geïmplementeerd binnen de bestaande infrastructuur van het bedrijf. 
+De PoC zal bestaan uit een volledig geconfigureerde Netskope omgeving met:
+
 \begin{itemize}
-  \item Het aantonen hoe toegang tot netwerken, applicaties en systemen strikt wordt gecontroleerd via authenticatie en autorisatie.
-  \item Implementatie van het least privileged access-model, waarbij gebruikers en systemen alleen toegang krijgen tot de middelen die ze absoluut nodig hebben om hun taken uit te voeren.
+  \item Een werkende Netskope Security Cloud configuratie die:
+  \begin{itemize}
+    \item Zero Trust principes implementeert via Netskope's Policy Enforcement Points (PEPs)
+    \item Authenticatie en autorisatie strikt controleert op netwerk-, applicatie- en dataniveau
+    \item Least privileged access afdwingt via granulaire policies
+  \end{itemize}
+  
+  \item Geïmplementeerde Netskope componenten voor:
+  \begin{itemize}
+    \item Identity en Access Management integratie
+    \item Network/Resource security controls
+    \item Data Loss Prevention (DLP)
+    \item User and Entity Behavior Analytics (UEBA)
+  \end{itemize}
 \end{itemize}
-De vergelijkende studie van verschillende Zero Trust-oplossingen zal als resultaat een lijst van aanbevolen tools opleveren die geschikt zijn voor de hybride cloudomgeving van InThePocket.
-Verwachte resultaten hiervan zijn:
+
+De concrete deliverables zullen bestaan uit:
+
 \begin{itemize}
-  \item Een lijst van geverifieerde tools die voldoen aan de eisen van InThePocket
-  \item Een kosten-batenanalyse van de verschillende oplossingen, waarbij gekeken wordt naar integratiegemak, prestaties, en kosten in verhouding tot de voordelen.
+  \item Technische documentatie die beschrijft:
+  \begin{itemize}
+    \item Netskope tenant configuratie
+    \item Policy frameworks voor verschillende gebruikersgroepen
+    \item Security policy instellingen
+    \item Integratie met bestaande systemen
+  \end{itemize}
+
+  \item Validatierapport met:
+  \begin{itemize}
+    \item Security testresultaten
+    \item Performance metrics
+    \item User experience analyse
+    \item Aanbevelingen voor productie-uitrol
+  \end{itemize}
+
+  \item Implementatiehandleiding voor:
+  \begin{itemize}
+    \item Netskope client deployment
+    \item Policy configuratie
+    \item Monitoring setup
+    \item Incident response procedures
+  \end{itemize}
 \end{itemize}
-De belangrijkste meerwaarde van het onderzoek voor InThePocket is de versterking van hun interne beveiliging. In de praktijk zal dit resulteren in een meer robuust beveiligingsmodel, wat niet alleen de integriteit van klantgegevens waarborgt, maar ook bijdraagt aan het voldoen aan regelgeving en het verbeteren van de algehele netwerkbeveiliging.
+
+De belangrijkste meerwaarde voor het bedrijf is een versterkte security posture door:
+\begin{itemize}
+  \item Centraal beheer van security policies via Netskope's unified platform
+  \item Verbeterde zichtbaarheid in gebruikersactiviteit en datastromen
+  \item Geautomatiseerde threat detection en response
+  \item Schaalbare security architectuur die past bij hun groei
+\end{itemize}
+
+De implementatie van Zero Trust via Netskope biedt het bedrijf niet alleen een robuuste beveiligingsarchitectuur, maar ook een strategisch voordeel in een snel veranderende IT-omgeving. 
+Door technologische innovatie te combineren met organisatorische aanpassingen, kan het bedrijf haar positie als innovatief technologiebedrijf verder versterken en voldoen aan de hoogste standaarden voor IT-veiligheid. 
+De PoC zal dienen als blauwdruk voor de uiteindelijke productie-implementatie van Netskope binnen de organisatie.
+Hoewel de PoC binnen een tijdsbestek van 14 weken wordt uitgevoerd, benadrukt onderzoek van MIT Lincoln Laboratory dat volledige Zero Trust-implementaties vaak 3–5 jaar vergen vanwege organisatorische complexiteit, zoals het trainen van medewerkers en het integreren van legacy-systemen.~\autocite{MIT2022}
+Dit impliceert dat de PoC vooral dient als eerste stap, waarbij de schaalbaarheid van de voorgestelde oplossing en het langetermijncommitment van het bedrijf essentieel zijn voor een succesvolle productie-uitrol. 
+Daarnaast richt deze studie zich specifiek op Netskope, waardoor vergelijkende analyses met andere Zero Trust-platforms (zoals Zscaler of Palo Alto Prisma) buiten beschouwing blijven. 
