@@ -5,9 +5,9 @@ set -o nounset
 set -o errexit
 
 # If Podman is installed (Fedora), use that instead of Docker
-if [ -x /usr/bin/podman ]; then
+if [ -x /opt/podman/bin/podman ]; then
   echo "Detected Podman"
-  container_cmd=/usr/bin/podman
+  container_cmd=/opt/podman/bin/podman
   # Without this mount option, the container will not have access to the
   # shared volume /bp
   mount_opts=":Z"
