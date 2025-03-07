@@ -49,16 +49,19 @@
 %   \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
 % \end{table}
 
-Als modern IT bedrijf is het belangrijk om de veiligheid van de data te garanderen. Dit is een van de redenen waarom het bedrijf heeft gekozen voor een Zero Trust Netwerkarchitectuur. 
+Als modern IT bedrijf is het belangrijk om de veiligheid van de data te garanderen. 
+Dit is de reden waarom het bedrijf heeft gekozen voor een Zero Trust netwerkarchitectuur. 
 Deze studie onderzoekt de implementatie van een Zero Trust Netwerkarchitectuur en een least privileged access model binnen de hybride cloudomgeving van een softwarebedrijf gebruikmakend van het netskope platform.
-Als eerste stap in dit onderzoek is het belangrijk om de huidige situatie van het bedrijf te analyseren. Dit omvat een overzicht van de huidige security-risico’s en tekortkomingen in de huidige perimeterbeveiliging.
-Dit wordt gedaan door een analyse van de huidige infrastructuur en de security-risico’s die hiermee gepaard gaan. Alsook door interviews met de IT-afdeling en de security-afdeling van het bedrijf.
+Als eerste stap in dit onderzoek is het belangrijk om de huidige situatie van het bedrijf te analyseren. 
+Dit omvat een overzicht van de huidige security-risico’s en tekortkomingen in de huidige perimeterbeveiliging.
+Dit wordt gedaan door een analyse van de huidige infrastructuur en de security-risico’s die hiermee gepaard gaan. Interviews met de IT-afdeling zullen ook een rol spelen in het identificeren van de huidige tekortkomingen.
 
 Zero Trust is een steeds belangrijker wordend model voor netwerkbeveiliging, vooral in omgevingen waar gevoelige data verwerkt wordt. 
-Het model is gebaseerd op de stelling dat geen enkel apparaat, gebruiker of systeem automatisch te vertrouwen is, zelfs niet als deze zich binnen het netwerk bevinden. 
+Het model is gebaseerd op de stelling dat geen enkel apparaat, gebruiker of systeem automatisch te vertrouwen is, zelfs niet als deze zich binnen het netwerk bevinden.~\autocite{Netskope2020} 
 De nadruk ligt op het continu verifiëren van gebruikersidentiteit, het beperken van toegang tot strikt noodzakelijke bronnen (least privileged access), en het monitoren van netwerkactiviteiten om verdachte handelingen snel te identificeren en aan te pakken.
 
-Netskope, het platform dat het bedrijf heeft gekozen voor hun Zero Trust implementatie, definieert Zero Trust als een beveiligingsmodel waarbij niemand blind vertrouwd wordt binnen het netwerk of toegang krijgt tot resources, applicaties of data totdat ze gevalideerd zijn als legitieme gebruiker met een legitieme behoefte~\autocite{Netskope2020}. Hun Security Service Edge (SSE) architectuur implementeert deze principes via een data-centrische aanpak gebaseerd op zes kernpijlers:
+Netskope, het platform dat het bedrijf heeft gekozen voor hun Zero Trust implementatie, definieert Zero Trust als een beveiligingsmodel waarbij niemand blind vertrouwd wordt binnen het netwerk of toegang krijgt tot resources, applicaties of data totdat ze gevalideerd zijn als legitieme gebruiker met een legitieme behoefte~\autocite{Netskope2020}. 
+De Security Service Edge (SSE) architectuur van Netskope implementeert deze principes via een data-centrische aanpak gebaseerd op zes kernpijlers:
 
 \begin{itemize}
   \item User \& Device: Authenticatie en autorisatie van gebruikers en apparaten
@@ -70,6 +73,11 @@ Netskope, het platform dat het bedrijf heeft gekozen voor hun Zero Trust impleme
 \end{itemize}
 
 Volgens Microsoft is de kern van het Zero Trust-model gebaseerd op drie belangrijke principes: altijd verifiëren, nooit vertrouwen; minimaal toegang verlenen; en schade beperken bij inbreuk. Dit houdt in dat de toegang tot systemen of data niet alleen wordt beperkt op basis van de locatie van de gebruiker of het apparaat, maar altijd afhangt van de identiteit, rol en andere specifieke toegangsbeperkingen~\autocite{Microsoft2024}. Netskope implementeert deze principes via een gelaagde aanpak met Policy Enforcement Points (PEPs) op drie niveaus:
+\begin{figure}
+  \centering
+  \includegraphics[width=1\textwidth]{Netskope-PEP.png}
+  \caption[]{Policy Enforcement Points (PEPs) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2020}}
+\end{figure}
 
 \begin{itemize}
   \item Network/Resource PEP: Controleert netwerktoegang en basiscommunicatie
@@ -81,9 +89,26 @@ Kaspersky benadrukt het belang van de technologieën die Zero Trust mogelijk mak
 
 \begin{itemize}
   \item Device en user authenticatie via een client certificaat infrastructuur
-  \item TLS-beveiligde tunneling voor alle communicatie
+  \begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Netskope-user-and-device.png}
+    \caption[]{User \& Apparaat authenticatie in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2020}}
+  \end{figure}
+
   \item Data Loss Prevention (DLP) met meer dan 3000 data identifiers en 1400 bestandstypes
-  \item Machine learning-gebaseerde User and Entity Behavior Analytics (UEBA)
+  \begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Netskope-DLP.png}
+    \caption[]{Data Loss Prevention (DLP) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2020}}
+  \end{figure}
+
+  \item Software Defined WAN (SD-WAN) voor het samenvoegen van netwerken op site's met de cloud.
+  \begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Netskope-SD-WAN.png}
+    \caption[]{Software Defined WAN (SD-WAN) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2020}}
+  \end{figure}
+
   \item Real-time threat protection met meer dan 40 threat intelligence feeds
 \end{itemize}
 
@@ -91,7 +116,7 @@ De implementatie van Zero Trust vereist zorgvuldige planning, vooral in complexe
 
 Uit onderzoek van MIT Lincoln Laboratory blijkt dat Zero Trust-architecturen bijzonder effectief zijn tegen insiderdreigingen, zoals misbruik van gecompromitteerde credentials of onbevoegde toegang door eigen medewerkers. 
 Dit risico is relevant voor het onderzochte bedrijf, waar ontwikkelaars en externe partners toegang hebben tot gevoelige klantdata. 
-MIT benadrukt dat een succesvolle Zero Trust-implementatie niet alleen technologische verandering vereist (zoals granular access control), maar ook organisatorische aanpassingen, zoals het trainen van medewerkers en het opstellen van duidelijk beleid voor toegangsverificatie. 
+MIT benadrukt dat een succesvolle Zero Trust-implementatie niet alleen technologische verandering vereist (zoals granular access control), maar ook organisatorische aanpassingen, zoals het trainen van medewerkers en het opstellen van een duidelijk beleid voor toegangsverificatie. 
 Dit sluit aan bij Netskope’s focus op User \& Device workflows en gedragsanalyse, waarbij continue verificatie van gebruikers en apparaten centraal staat. 
 Tegelijkertijd waarschuwt MIT voor de complexiteit van hybride implementaties, waarbij on-premises systemen en clouddiensten geïntegreerd moeten worden—een uitdaging die het bedrijf direct ondervindt en waar Netskope’s SSE-platform een antwoord op biedt.~\autocite{MIT2022}
 
@@ -103,8 +128,6 @@ Netskope biedt hiervoor een gestructureerde aanpak met specifieke operationele w
   \item Data Protection workflow voor databescherming en compliance
 \end{itemize}
 
-Deze workflows worden ondersteund door een automation engine die continue monitoring uitvoert op zeven dimensies van gebruikersactiviteit: tijd, dag, locatie, apparaat, service, activiteit en object. Dit zorgt voor een dynamische beveiligingsposture die zich aanpast aan veranderende omstandigheden en dreigingen~\autocite{Netskope2020}.
-
-Het onderzoek van Mutemwa et al. levert een belangrijke bijdrage aan ons begrip van de veranderende aard van cybersecurity in een post-pandemische wereld. Hun studie bevestigt dat traditionele perimeterbescherming fundamenteel is uitgedaagd door de verschuiving naar gedistribueerde werkomgevingen.
-De auteurs concluderen dat organisaties moeten evolueren van een perimeter-gebaseerd beveiligingsmodel naar een meer holistische benadering die rekening houdt met de realiteit van een uitgebreide, poreuze bedrijfsgrens. Dit vereist een heroverweging van beveiligingsarchitecturen, met grotere nadruk op identiteitsbeheer, endpoint-beveiliging en gebruikerseducatie.
-Deze studie onderstreept de noodzaak voor organisaties om hun cybersecurity-strategieën aan te passen aan een wereld waarin de traditionele grenzen tussen “binnen” en “buiten” het bedrijfsnetwerk steeds vager worden, een conclusie die aansluit bij de bredere verschuiving in de richting van zero-trust beveiligingsmodellen in de cybersecurity-gemeenschap~\autocite{ACM2021}.
+Het onderzoek van Mutemwa et al~\autocite{ACM2021}. levert een belangrijke bijdrage aan ons begrip van de veranderende aard van cybersecurity in een post-pandemische wereld. Hun studie bevestigt dat traditionele perimeterbescherming fundamenteel is uitgedaagd door de verschuiving naar gedistribueerde werkomgevingen.
+De auteurs concluderen dat organisaties moeten evolueren van een perimeter-gebaseerd beveiligingsmodel naar een meer complete benadering die rekening houdt met de realiteit van een uitgebreide, doorlatende bedrijfsgrens. Dit vereist een heroverweging van beveiligingsarchitecturen, met grotere nadruk op identiteitsbeheer, endpoint-beveiliging en gebruikerseducatie.
+Deze studie onderstreept de noodzaak voor organisaties om hun cybersecurity-strategieën aan te passen aan een wereld waarin de traditionele grenzen tussen “binnen” en “buiten” het bedrijfsnetwerk steeds vager worden, een conclusie die aansluit bij de bredere verschuiving in de richting van zero-trust beveiligingsmodellen in de cybersecurity-gemeenschap.
