@@ -1,0 +1,32 @@
+%%=============================================================================
+%% Requirements analyse
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Requirements Analyse}{Requirements Analisis}}%
+\label{ch:requirements analyse}
+
+In de eerste fase van het onderzoek staat een requirementsanalyse centraal, waar-
+bij meerdere meetings werden gehouden met de stakeholders/leden
+binnen het IT-team en vertegenwoordigers van Netskope.
+
+\section{Must have requirements}
+Uit de meetings zijn er een aantal requirements gekomen die belangrijk zijn voor een succesvolle implementatie van de SASE architectuur.
+\begin{itemize}
+  \item \textbf{Netskope client}: De Netskope client moet company wide geïmplementeerd zijn. 
+  \item \textbf{DLP}: (Data Loss Prevention) Het risico dat vertrekkende werknemers gevoelige informatie meenemen moet worden voorkomen.
+  \item \textbf{Bedrijfsgerichte policies}: Specifiek op maat gemaakte policies voor het bedrijf, die dan ook company wide geïmplementeerd moeten worden. Dit gaat van het blokkeren van bepaalde websites tot het beperken van het aantal gebruikte apps.
+  \item \textbf{Alerting}: Het interne IT team moet op de hoogte blijven van alle beveiligingsgebeurtenissen. Denk bijvoorbeeld aan een DLP alert die wordt gegenereerd door een werknemer die gevoelige informatie downloadt voor hij vertrekt.
+  \item \textbf{Gepaste documentatie}: Voor de werknemers moet het duidelijk zijn dat deze implementatie gedaan is om hun te beschermen tegen cyberdreigingen, en om het bedrijf te beschermen tegen data lekken. Ook moet het duidelijk zijn voor de werknemers welke stappen ze moeten nemen als er iets mis gaat, denk dan aan een false positive.
+  \item \textbf{Privacy}: De algemene privacy van de werknemers behouden, duidelijk maken deze implementatie wordt gedaan met hun privacy in gedachte.
+  \item \textbf{Secure access}: De toegang tot gevoelige company resources beveiligen voor remote werknemers. Uiteindelijk één groot bedrijfsnetwerk waar enkel en alleen werknemers van het bedrijf zich in kunnen begeven, ongeacht hun locatie.
+\end{itemize}
+
+\section{Could have requirements}
+\begin{itemize}
+  \item \textbf{Duidelijk proces}: Een helder en duidelijk proces voor het interne IT team om incidenten en meldingen te verwerken. 
+  \item \textbf{Automatische use case flagging}: Automatische flagging als bepaalde gebruikers patronen beginnen te vertonen die betrekking kunnen hebben tot een slechte use case. Denk dan bijvoorbeeld aan iemand die alle interene data downloadt voor hij vertrekt.
+\end{itemize}
+
+\section{Huidige situatie}
+Het bedrijf kampt momenteel met meerdere problemen, werknemers die van thuis uit werken kunnen niet aan de interne apps zonder VPN, de interne IT afdeling heeft geen visibiliteit op potentiële datalekken, en er is geen centraal overzicht van alle incidenten.
+

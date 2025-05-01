@@ -17,38 +17,39 @@
 %   \item \ldots
 % \end{itemize}
 
-In een tijdperk waarin digitale transformatie en hybride cloudomgevingen de norm zijn geworden, staat cybersecurity voor softwarebedrijven centraal.
-Traditionele beveiligingsmodellen, gebaseerd op perimeterbescherming via firewalls en VPNs, volstaan niet langer tegen moderne dreigingen zoals insiderrisico’s, geavanceerde phishingaanvallen en ongeautoriseerde data-exfiltratie.
-Zero Trust, een model gebaseerd op het principe “never trust, always verify”, biedt een robuust alternatief door toegang strikt te beperken op basis van identiteit, context en continue verificatie. Voor softwarebedrijven met gevoelige klantdata, is deze aanpak essentieel om compliance te waarborgen en vertrouwen te behouden.
+In een tijdperk waarin digitale transformatie en hybride cloudomgevingen de norm zijn geworden, staat een geïntegreerde aanpak van netwerk en beveiliging voor softwarebedrijven centraal. Traditionele netwerkmodellen, gebaseerd op perimeterbescherming via firewalls en VPNs, volstaan niet langer in een wereld van directe cloud-toegang, telewerken en gedistribueerde applicaties. SASE (Secure Access Service Edge) biedt een geïntegreerd raamwerk dat netwerk- en beveiligingsfuncties combineert in één cloudgebaseerd servicemodel, wat cruciaal is voor de moderne gedistribueerde werkplek. Voor softwarebedrijven met gevoelige klantdata, is deze aanpak essentieel om compliance te waarborgen en vertrouwen te behouden.
 
+In dit onderzoek wordt de implementatie van een SASE (Secure Access Service Edge) oplossing, met de focus op Netskope, onderzocht.
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
 % Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
 
-Het onderzochte softwarebedrijf, gespecialiseerd in digitale producten, kampt met toenemende security-risico’s in zijn hybride IT-infrastructuur. 
-De huidige perimetergebaseerde beveiliging en de stijgende trend in telewerk biedt onvoldoende bescherming tegen interne dreigingen en geavanceerde externe aanvallen. 
+Het onderzochte softwarebedrijf, gespecialiseerd in digitale producten, kampt met toenemende uitdagingen op het gebied van zowel netwerktoegang als security in zijn hybride IT-infrastructuur. De huidige perimetergebaseerde beveiliging in combinatie met traditionele netwerktechnologieën biedt onvoldoende prestaties, flexibiliteit en bescherming voor de moderne werkomgeving.
+
 Specifieke pijnpunten zijn:
 
 \begin{itemize}
   \item User \& Device: Authenticatie en autorisatie van gebruikers en apparaten.
 	\item Application \& Workload: Applicatie-specifieke toegangscontrole en monitoring.
   \item Data: Databescherming en classificatie
+  \item Connectivity: veilige verbinding tussen cloud- en at home-omgevingen.
 \end{itemize}
 
-Om deze uitdagingen aan te pakken, heeft het bedrijf gekozen voor het Netskope-platform om een Zero Trust-architectuur te implementeren. Deze keuze vereist echter een gedetailleerd inzicht in de technische mogelijkheden van Netskope en een op maat gemaakte implementatiestrategie.
+Om deze uitdagingen aan te pakken, heeft het bedrijf gekozen voor het Netskopeplatform om een SASE-architectuur te implementeren. Deze keuze vereist echter een gedetailleerd inzicht in de technische mogelijkheden van Netskope en een op maat gemaakte implementatiestrategie die zowel netwerk- als beveiligingsaspecten integreert.
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 
 % Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
 
-Hoe kan een Zero Trust Netwerkarchitectuur en een least privileged access model worden geïmplementeerd binnen de hybride cloudomgeving van een softwarebedrijf gebruikmakend van het Netskope-platform?
+Hoe kan een SASE-architectuur worden geïmplementeerd binnen de hybride cloudomgeving van een softwarebedrijf gebruikmakend van het Netskope platform?
+
 Deze vraag wordt opgesplitst in probleem- en oplossingsdomein:
 
 Probleemdomein
 \begin{itemize}
-  \item Welke security-risico’s in de huidige infrastructuur kunnen worden gemitigeerd via Netskope’s Zero Trust-functionaliteiten?
+  \item Welke netwerk- en security-uitdagingen in de huidige infrastructuur kunnen worden aangepakt via Netskope's SASE-functionaliteiten?
   \item Welke tekortkomingen in de huidige perimeterbeveiliging vereisen een Zero Trust-aanpak?
 \end{itemize}
 
@@ -71,10 +72,7 @@ Deelvragen
 
 % Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
-Het doel van deze proef is het ontwikkelen van een PoC dat de haalbaarheid en
-voordelen van het zero trust systeem aantoont.
-Het resultaat gaat verder dan een geschreven scriptie en omvat dus ook een implementatie die de werking van het systeem aantoont. 
-Deze PoC zal worden geëvalueerd door team IT in de laatste 2 weken van dit onderzoek.
+Het doel van deze proef is het ontwikkelen van een PoC dat de haalbaarheid en voordelen van de SASE-architectuur aantoont. Het resultaat gaat verder dan een geschreven scriptie en omvat dus ook een implementatie die de werking van het systeem aantoont, met bijzondere aandacht voor zowel de netwerkoptimalisatie als beveiligingsaspecten. Deze PoC zal worden geëvalueerd door de interne IT afdeling in de laatste 2 weken van dit onderzoek.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}

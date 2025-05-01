@@ -1,0 +1,35 @@
+%%=============================================================================
+%% Proof of concept uitwerking
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Proof of Concept uitwerking}{Proof of Concept Implementation}}%
+\label{ch:proof of concept implementation}
+
+In dit hoofdstuk wordt de proof of concept ontwikkeld, deze zal aan de requirements voldoen die in hoofdstuk \ref{ch:requirements analyse} zijn opgesteld. Deze proof of concept zal gebaseerd zijn op de voorbereiding uit hoofdstuk \ref{ch:proof of concept preparation}.
+
+\section{Netskope Client}
+
+\subsection{Jamf}
+Het bedrijf maakt gebruik van de software tool Jamf voor het beheren van de apparaten van de werknemers.
+
+Jamf is een toonaangevende Mobile Device Management (MDM)-oplossing die specifiek is ontwikkeld voor het beheer van Apple-apparaten binnen organisaties. De oplossing biedt geavanceerde mogelijkheden voor implementatie, beveiliging en beheer, waardoor deze bijzonder geschikt is voor een enterprise-omgeving.  
+
+Een belangrijk onderdeel van Jamf is de zero-touch implementatie en onboarding, waarbij apparaten direct na het uitpakken automatisch worden geconfigureerd via Apple Business Manager of Apple School Manager.  Dit maakt het mogelijk om de Netskope Client te installeren zonder dat de gebruiker zelf iets hoeft te doen.
+
+Op het gebied van gedecentraliseerd apparaatbeheer maakt Jamf gebruik van Blueprints, gebaseerd op Apple’s Declarative Device Management, om configuraties, app-installaties en restricties automatisch toe te passen. Smart Groups stellen dynamisch devicegroepen samen op basis van kenmerken zoals OS-versie of locatie, met geautomatiseerde acties om het beheer te stroomlijnen. Via de Self Service+ portal kunnen gebruikers zelf apps en updates installeren, wat gepaard gaat met ingebouwde security-awareness trainingen om het risico op menselijke fouten te verminderen. ~\autocite{Jamf2025}
+
+\subsection{Netskope Client}
+We kunnen de Netskope Client installeren via Jamf. Op die manier kunnen we de installatie automatiseren zonder manuele tussenkomst van de gebruiker.
+
+Om de Netskope Client te installeren via Jamf, moeten we de volgende stappen volgen:
+
+\begin{enumerate}
+    \item Een nieuwe Jamf policy maken. Dit laat ons toe om de Netskope Client te installeren en om algemene instellingen te configureren.
+    \item De Jamf scripts downloaden van de Netskope support website en toevoegen aan de policy.
+    \item Netskope Root and Tenant certificaten toevoegen aan de policy. Dit biedt meer beveiliging aan eind gebruikers tijdens de client installatie.
+\end{enumerate}
+~\autocite{Netskope2025-9}
+
+Via Jamf kunnen we dynamische computer groepen maken die bepaalde policies toepast op die specifieke groep. We moeten dan enkel de correcte desbetreffende gebruikers toe voegen aan de groep. Bij die personen zal dan automatisch de Netskope Client geïnstalleerd worden.
+
+
