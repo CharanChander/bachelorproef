@@ -60,7 +60,7 @@ SASE is een relatief nieuw raamwerk dat netwerk- en beveiligingsfuncties converg
 Netskope is gekozen als het platform voor de implementatie van een SASE-architectuur binnen de hybride cloudomgeving van het bedrijf. Netskope onderscheidt zich door zijn geïntegreerde benadering van netwerk- en beveiligingsdiensten via het Netskope One Platform. Dit platform combineert geavanceerde technologieën zoals de Zero Trust Engine, NewEdge-netwerk en uitgebreide DLP-functionaliteiten om zowel beveiliging als connectiviteit te optimaliseren~\autocite{Netskope2025-1}.
 
 \subsection{Kernpijlers}
-Belangrijkste kernpijlers van Netskope SASE:
+De SASE-architectuur van Netskope rust op vier essentiële kernpijlers die samen een omvattend beveiligingsraamwerk vormen, specifiek afgestemd op de uitdagingen van moderne hybride cloudomgevingen zoals die van een software agency bedrijf:
 
 \begin{itemize}
   \item \textbf{Zero Trust Engine}: Deze kerncomponent biedt contextbewuste beveiliging door risico's in real-time te analyseren op basis van meer dan 50 variabelen, zoals gebruikersgedrag, apparaatprofielen en applicatiecontext. Dit stelt organisaties in staat om adaptieve toegangscontrole toe te passen en risico's proactief te beheren~\autocite{Netskope2025-2}.
@@ -74,27 +74,76 @@ In tegenstelling tot andere SASE-leveranciers biedt Netskope een volledig geïnt
 Met deze geïntegreerde aanpak biedt Netskope een robuuste oplossing voor bedrijven die willen overstappen naar een modern SASE-model. Het platform combineert geavanceerde technologieën met schaalbare architectuur, wat essentieel is voor het waarborgen van veiligheid, prestaties en compliance in hybride omgevingen.
 
 \section{Zero Trust}
-Zero Trust is een model dat gebaseerd is op de stelling dat geen enkel apparaat, gebruiker of systeem automatisch te vertrouwen is, zelfs niet als deze zich binnen het netwerk bevinden.~\autocite{Netskope2024} 
+Zero Trust is een model dat gebaseerd is op de stelling dat geen enkel apparaat, gebruiker of systeem automatisch te vertrouwen is, zelfs niet als deze zich binnen het netwerk bevinden~\autocite{Netskope2024}.
 De nadruk ligt op het continu verifiëren van gebruikersidentiteit, het beperken van toegang tot strikt noodzakelijke bronnen (least privileged access), en het monitoren van netwerkactiviteiten om verdachte handelingen snel te identificeren en aan te pakken.
 
 
 Volgens Microsoft is de kern van het Zero Trust-model gebaseerd op drie belangrijke principes: altijd verifiëren, nooit vertrouwen; minimaal toegang verlenen; en schade beperken bij inbreuk. Dit houdt in dat de toegang tot systemen of data niet alleen wordt beperkt op basis van de locatie van de gebruiker of het apparaat, maar altijd afhangt van de identiteit, rol en andere specifieke toegangsbeperkingen~\autocite{Microsoft2024}. 
 
 
-Kaspersky benadrukt het belang van de technologieën die Zero Trust mogelijk maken, zoals multi-factor authenticatie (MFA), versleuteling van communicatie en geavanceerde netwerkmonitoringtool. "De omslag naar hybride werken en de toename van het aantal cyberbedreigingen die ook nog eens steeds complexer worden, betekent dat cyberweerbaarheid voor veel organisaties de hoogste prioriteit heeft. Cyberweerbaarheid houdt in dat we onze focus moeten verleggen van preventie van cyberaanvallen naar de acceptatie dat dit soort aanvallen tegenwoordig onvermijdelijk zijn en we ervoor moeten zorgen dat organisaties zo goed mogelijk zijn voorbereid op eventuele aanvallen en snel en effectief kunnen herstellen. Zero Trust speelt een belangrijke rol in verbeterde cyberweerbaarheid."~\autocite{Kaspersky2024}.
+Kaspersky benadrukt het belang van de technologieën die Zero Trust mogelijk maken, zoals multi-factor authenticatie (MFA), versleuteling van communicatie en geavanceerde netwerkmonitoringtool. ``De omslag naar hybride werken en de toename van het aantal cyberbedreigingen die ook nog eens steeds complexer worden, betekent dat cyberweerbaarheid voor veel organisaties de hoogste prioriteit heeft.'' Cyberweerbaarheid houdt in dat we onze focus moeten verleggen van preventie van cyberaanvallen naar de acceptatie dat dit soort aanvallen tegenwoordig onvermijdelijk zijn en we ervoor moeten zorgen dat organisaties zo goed mogelijk zijn voorbereid op eventuele aanvallen en snel en effectief kunnen herstellen. Zero Trust speelt een belangrijke rol in verbeterde cyberweerbaarheid~\autocite{Kaspersky2024}.
+
+NIST definieert \textbf{Zero Trust Architecture (ZTA)} als een volledig cybersecurity-plan dat vertrouwen nooit impliciet verleent, maar continu evalueert. ZTA richt zich op het beschermen van alle resources – van gegevensbronnen tot netwerkapparatuur – door strikte authenticatie, autorisatie en encryptie toe te passen bij elke toegangsverzoek~\autocite{NIST2020}.
+
+\subsection{Kernprincipes van Zero Trust}
+Zeven fundamentele principes vormen de basis van NIST’s Zero Trust-architectuur~\autocite{NIST2020}:  
+
+\begin{itemize}
+  \item \textbf{Alle resources als entiteiten beschouwen}: Zowel kleine apparaten als complexe systemen worden behandeld als beveiligingsobjecten die specifieke controles vereisen.  
+  \item \textbf{Beveiligde communicatie ongeacht locatie}: Netwerksegmentatie biedt geen automatisch vertrouwen; zelfs interne apparaten moeten aan dezelfde beveiligingseisen voldoen als externe.  
+  \item \textbf{Toegang per sessie}: Vertrouwen in de aanvrager wordt geëvalueerd vóór toegang wordt verleend, met minimale rechten om een taak uit te voeren.  
+  \item \textbf{Dynamisch beleid}: Toegang wordt gebaseerd op contextuele factoren zoals identiteit, apparaatstatus, gedragsanalyse en omgevingsvariabelen.  
+  \item \textbf{Continue monitoring van integriteit}: Geen enkel apparaat wordt blind vertrouwd; beveiligingsstatus wordt bij elke aanvraag gecontroleerd.  
+  \item \textbf{Dynamische authenticatie en autorisatie}: Validatie gebeurt tijdens de sessie, met mogelijkheid tot herauthenticatie bij ongewoon gedrag.  
+  \item \textbf{Maximale informatieverzameling}: Zichtbaarheid over assets, netwerkverkeer en gebruikersactiviteiten dient als input voor risico-evaluatie en beleidsaanpassing.  
+\end{itemize}
+
+\subsection{Implementatiestrategieën}
+NIST raadt drie benaderingen aan voor migratie naar ZTA~\autocite{NIST2020}:
+
+\begin{itemize}
+  \item \textbf{Versterkt identiteitsbeheer}: Identiteit als kerncomponent voor toegangsbeslissingen, gekoppeld aan multi-factor authenticatie en risicoscoring.  
+  \item \textbf{Micro-segmentatie}: Resources isoleren in unieke netwerksegmenten, beschermd door PEPs, om laterale bewegingen te beperken.  
+  \item \textbf{Netwerkinfrastructuur en Software Defined Perimeters}: Gebruik van SD-WAN en cloudgebaseerde netwerkbeveiliging om Zero Trust-principes toe te passen.  
+\end{itemize}
+
+\subsection{Migratieproces}
+Organisaties moeten een gefaseerde aanpak volgen~\autocite{NIST2020}:  
+\begin{itemize}
+  \item \textbf{Identificatie van actoren en resources}: Inventarisatie van gebruikers, apparaten en kritieke assets.  
+  \item \textbf{Beleiddefinitie}: Ontwikkeling van dynamische regels gebaseerd op risicoprofielen en compliance-eisen.  
+  \item \textbf{Implementatie en monitoring}: Geleidelijke uitrol met continue evaluatie van prestaties en aanpassing van beleid.  
+\end{itemize}
+
+\subsection{Uitdagingen en beperkingen}
+ZTA reduceert risico’s maar elimineert ze niet volledig. Belangrijke bedreigingen omvatten~\autocite{NIST2020}:  
+\begin{itemize}
+  \item \textbf{Insiderdreigingen}: Misbruik van gecompromitteerde credentials.  
+  \item \textbf{Netwerkverstoringen}: Denial-of-Service-aanvallen op PEPs.  
+  \item \textbf{Beperkte zichtbaarheid}: Moeilijkheden bij het detecteren van verdachte activiteiten in gedistribueerde omgevingen.  
+\end{itemize}
+
+NIST benadrukt dat succesvolle implementatie vereist~\autocite{NIST2020}:  
+\begin{itemize}
+  \item \textbf{Interoperabiliteit}: Integratie met bestaande Identity Providers en SIEM-systemen.  
+  \item \textbf{Organisatorische aanpassingen}: Training van medewerkers en duidelijke incidentresponse-processen.
+\end{itemize}
 
 \section{Policy Enforcement Points}
-Netskope implementeert deze principes via een gelaagde aanpak met Policy Enforcement Points (PEPs) op drie niveaus:
+Netskope implementeert de principes die besproken worden in sectie~\ref{sec:Kernprincipes van Zero Trust} in een gelaagde aanpak met Policy Enforcement Points (PEPs) op drie niveaus:
 
 \begin{itemize}
   \item \textbf{Network/Resource PEP}: controleert netwerktoegang en basiscommunicatie
   \item \textbf{Application PEP}: beheert toegang tot specifieke applicaties en workloads
   \item \textbf{Data PEP}: zorgt voor databescherming en compliance
 \end{itemize}
-\begin{figure}
+
+Volgende Figuur~\ref{fig:Netskope-PEP} toont een uitgebreid Zero Trust architectuurmodel dat drie hoofdcomponenten naadloos integreert: identiteits- en toegangsbeheer, resourcebescherming en controlefuncties. Aan de linkerzijde begint het proces met twee mogelijke entiteiten (niet-persoons- of gebruikersentiteiten) die authenticatie en autorisatie ondergaan, waarbij device-compliance, locatie, toegangstype en -methode worden geëvalueerd in samenwerking met een gefedereerde identiteitsservice (IDP). Het middelste gedeelte illustreert de gelaagde resourcebeveiliging met drie opeenvolgende autorisatieniveaus: resource-, applicatie- en datautorisatie, elk met hun eigen Policy Enforcement Point (PEP) en specifieke beveiligingscapaciteiten zoals microsegmentatie, app-instancing en datarechten management. De rechterzijde vertegenwoordigt het centrale controlesysteem dat bestaat uit een Policy Engine die wordt ondersteund door SOAR (Security Orchestration, Automation and Response), analytische vertrouwensscoring, SIEM (Security Information and Event Management) en event logging. De blauwe pijlen tonen hoe de Policy Engine directe controle uitoefent over alle PEPs, terwijl de stippellijnen de feedback-loops illustreren die essentieel zijn voor een dynamisch Zero Trust beveiligingsmodel dat voortdurend wordt bijgesteld op basis van actuele dreigingsinformatie en gebruikersgedrag, wat cruciaal is voor een effectieve SASE-implementatie in hybride cloudomgevingen zoals die van een software agency bedrijf.~\autocite{Netskope2024}.
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{Netskope-PEP.png}
+  \includegraphics[width=\textwidth]{Netskope-PEP.png}
   \caption[]{Policy Enforcement Points (PEPs) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \label{fig:Netskope-PEP}
 \end{figure}
 
 
@@ -107,22 +156,28 @@ Netskope implementeert deze principes via een gelaagde aanpak met Policy Enforce
   \item Real-time threat protection met meer dan 40 threat intelligence feeds
 \end{itemize}
 
-\begin{figure}
+De volgende Figuur~\ref{fig:Netskope-user-and-device} beschrijft het uitgebreide authenticatie- en validatieproces voor gebruikers en apparaten binnen de Netskope Zero Trust implementatie. De workflow begint bij een gebruiker die toegang vraagt, waarna eerst de apparaatconfiguratie wordt gevalideerd en de locatie wordt bepaald via on-premise detectie. Het diagram toont drie verschillende authenticatiepaden afhankelijk van het type: Domain Multi-User, Domain Single User of SAML/SSO, elk met specifieke verificatiestappen. Centrale elementen in dit proces zijn de UPN (User Principal Name) extractie voor identificatie, LDAP-gebruikersverificatie, groepsautorisatie via LDAP of SAML, en certificaatvalidatie. De Netskope Control Plane coördineert de verschillende autorisatieprocessen, past beveiligingsconfiguraties toe en zorgt voor de opzet van een versleutelde tunnel voor veilige communicatie. Rechts in het diagram worden de gebruikersattributen weergegeven die aan Netskope worden verzonden, waaronder UPN, e-mail, apparaatbeheersstatus, geïnstalleerde applicaties en diverse metadata, wat bijdraagt aan een context-bewuste beveiligingsbeoordeling in een hybride cloudscenario~\autocite{Netskope2024}.
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{Netskope-user-and-device.png}
-  \caption[]{User \& Apparaat authenticatie in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \includegraphics[width=\textwidth]{Netskope-user-and-device.png}
+  \caption[]{Gebruiker \& Apparaat authenticatie in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \label{fig:Netskope-user-and-device}
 \end{figure}
 
-\begin{figure}
+De Figuur~\ref{fig:Netskope-DLP} illustreert het Data Loss Prevention (DLP) en Digital Rights Management (DRM) implementatieproces binnen het Netskope Zero Trust raamwerk. Het proces start met een inline toegangsverzoek dat vervolgens door meerdere analyselagen gaat, beginnend met bestandsmetadata- en contentscanning, gevolgd door compliance policy evaluatie en DLP regelprofielen. Bijzonder aan deze workflow is de parallelle toepassing van zes geavanceerde analysetechnieken: Keyword Matching, Indexed Document Matching, Exact Data Matching, OCR/Fingerprinting, Image Classifiers en Text Classifiers. De Data PEP fungeert als centraal beslissingspunt dat op basis van Booleaanse logica bepaalt welke actie moet worden ondernomen. De mogelijke uitkomsten omvatten directe toegang (Allow), toegangsweigering (Block), remediëring met extra beveiligingsmaatregelen zoals multi-factor authenticatie of encryptie, of beperkte toegang met uitzonderingen. Dit gehele proces vormt een diepgaande beveiligingslaag die specifiek gericht is op databescherming en preventie van datalekken binnen het SASE-architectuurraamwerk~\autocite{Netskope2024}.
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{Netskope-DLP.png}
+  \includegraphics[width=\textwidth]{Netskope-DLP.png}
   \caption[]{Data Loss Prevention (DLP) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \label{fig:Netskope-DLP}
 \end{figure}
 
-\begin{figure}
+Deze Figuur~\ref{fig:Netskope-SD-WAN} toont een gedetailleerd stroomdiagram voor de implementatie van Zero Trust principes binnen een Software-Defined Wide Area Network (SD-WAN) omgeving met Netskope. De workflow begint bij een entiteit die toegang zoekt tot een applicatie en doorloopt vervolgens verschillende beveiligingslagen. Eerst vindt device- en gebruikersverificatie plaats via het Netskope Control Plane, gevolgd door authenticatie en autorisatie. Na succesvolle authenticatie wordt de verbinding via een SD-WAN Endpoint geleid en een Port 443 Tunnel opgezet. Het cruciale beslissingspunt is de Resource PEP (Policy Enforcement Point) die evalueert of toegang moet worden verleend op basis van vooraf gedefinieerde beveiligingsregels. Bij goedkeuring wordt de verbinding via de Netskope Stitcher doorgestuurd naar de SD-WAN Publisher die de verbinding beschikbaar maakt op het oorspronkelijke protocol/poort voor de applicatie. Bij afwijzing wordt de toegang geblokkeerd, de gebruiker genotificeerd, activiteiten gelogd en risicobeoordelingen bijgewerkt, wat essentieel is voor voortdurende beveiligingsmonitoring in een hybride cloudomgeving~\autocite{Netskope2024}.
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{Netskope-SD-WAN.png}
+  \includegraphics[width=\textwidth]{Netskope-SD-WAN.png}
   \caption[]{Software Defined WAN (SD-WAN) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \label{fig:Netskope-SD-WAN}
 \end{figure}
 
 
@@ -144,5 +199,5 @@ Netskope biedt hiervoor een gestructureerde aanpak met specifieke operationele w
 \end{itemize}
 
 Het onderzoek van Mutemwa et al~\autocite{ACM2021} levert een belangrijke bijdrage aan ons begrip van de veranderende aard van cybersecurity in een post-pandemische wereld. Hun studie bevestigt dat traditionele perimeterbescherming fundamenteel is uitgedaagd door de verschuiving naar gedistribueerde werkomgevingen.
-De auteurs concluderen dat organisaties moeten evolueren van een perimeter-gebaseerd beveiligingsmodel naar een meer complete benadering die rekening houdt met de realiteit van een uitgebreide, doorlatende bedrijfsgrens. Dit vereist een heroverweging van beveiligingsarchitecturen, met grotere nadruk op identiteitsbeheer, endpoint-beveiliging en gebruikerseducatie.
+De auteurs besluiten dat organisaties moeten evolueren van een perimeter-gebaseerd beveiligingsmodel naar een meer complete benadering die rekening houdt met de realiteit van een uitgebreide, doorlatende bedrijfsgrens. Dit vereist een heroverweging van beveiligingsarchitecturen, met grotere nadruk op identiteitsbeheer, endpoint-beveiliging en gebruikerseducatie.
 Deze studie onderstreept de noodzaak voor organisaties om hun cybersecurity-strategieën aan te passen aan een wereld waarin de traditionele grenzen tussen “binnen” en “buiten” het bedrijfsnetwerk steeds vager worden, een conclusie die aansluit bij de bredere verschuiving in de richting van zero-trust beveiligingsmodellen in de cybersecurity-gemeenschap.
