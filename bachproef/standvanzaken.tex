@@ -49,15 +49,37 @@
 %   \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
 % \end{table}
 
-Als modern IT bedrijf is het belangrijk om de veiligheid van data te garanderen als ook snelle, en betrouwbare toegang tot applicaties en diensten te bieden. Dit is de reden waarom het bedrijf heeft gekozen voor een SASE architectuur. Deze studie onderzoekt de implementatie van een SASE-architectuur binnen de hybride cloudomgeving van een softwarebedrijf gebruikmakend van het Netskope platform. Als eerste stap in dit onderzoek is het belangrijk om de huidige situatie van het bedrijf te analyseren. Dit omvat een overzicht van de netwerk- en security-uitdagingen samen met de tekortkomingen in de huidige architectuur.
+Als modern IT bedrijf is het belangrijk om de veiligheid van data te garanderen als ook snelle, en betrouwbare toegang tot applicaties en diensten te bieden. Dit is de reden waarom het bedrijf heeft gekozen voor een SASE architectuur.
+
+\vspace{2ex}
+
+Deze studie onderzoekt de implementatie van een SASE-architectuur binnen de hybride cloudomgeving van een softwarebedrijf gebruikmakend van het Netskope platform. 
+
+\vspace{2ex}
+
+Als eerste stap in dit onderzoek is het belangrijk om de huidige situatie van het bedrijf te analyseren. Dit omvat een overzicht van de netwerk- en security-uitdagingen samen met de tekortkomingen in de huidige architectuur.
 
 \section{Wat is SASE?}
-Secure Access Service Edge (SASE) is een cloud-gebaseerd beveiligingsmodel dat netwerk- en beveiligingsfuncties combineert in één geïntegreerd platform. Deze technologie is ontstaan als antwoord op de toenemende complexiteit van moderne IT-infrastructuren, waarbij bedrijven steeds meer vertrouwen op cloud-diensten en gedistribueerde werkplekken. SASE biedt een oplossing die traditionele netwerkmuren doorbreekt door beveiligde toegang te verlenen aan gebruikers, ongeacht hun locatie of het apparaat dat ze gebruiken~\autocite{KPN2023}.
+Secure Access Service Edge (SASE) is een cloud-gebaseerd beveiligingsmodel dat netwerk- en beveiligingsfuncties combineert in één geïntegreerd platform. Deze technologie is ontstaan als antwoord op de toenemende complexiteit van moderne IT-infrastructuren, waarbij bedrijven steeds meer vertrouwen op cloud-diensten en gedistribueerde werkplekken.
 
-SASE is een relatief nieuw raamwerk dat netwerk- en beveiligingsfuncties convergeert in één cloudgebaseerd servicemodel. Het wordt steeds belangrijker, vooral in omgevingen waar gebruikers en data zich nu buiten het traditionele netwerkperimeter bevinden. SASE combineert SD-WAN (Software-Defined Wide Area Networking) technologie voor netwerkoptimalisatie met cloudgebaseerde beveiligingsfuncties, waaronder Zero Trust Network Access (ZTNA), Cloud Access Security Brokers (CASB) en Firewall-as-a-Service (FWaaS)~\autocite{ZPE2025}.
+\vspace{2ex}
+
+SASE biedt een oplossing die traditionele netwerkmuren doorbreekt door beveiligde toegang te verlenen aan gebruikers, ongeacht hun locatie of het apparaat dat ze gebruiken~\autocite{KPN2023}.
+
+\vspace{2ex}
+
+SASE is een relatief nieuw framework dat netwerk- en beveiligingsfuncties samenvoegt in één cloudgebaseerd servicemodel. Het wordt steeds belangrijker, vooral in omgevingen waar gebruikers en data zich nu buiten het traditionele netwerkperimeter bevinden. 
+
+\vspace{2ex}
+
+SASE combineert SD-WAN (Software-Defined Wide Area Networking) technologie voor netwerkoptimalisatie met cloudgebaseerde beveiligingsfuncties, waaronder Zero Trust Network Access (ZTNA), Cloud Access Security Brokers (CASB) en Firewall-as-a-Service (FWaaS)~\autocite{ZPE2025}.
 
 \section{Het gekozen platform, Netskope}
-Netskope is gekozen als het platform voor de implementatie van een SASE-architectuur binnen de hybride cloudomgeving van het bedrijf. Netskope onderscheidt zich door zijn geïntegreerde benadering van netwerk- en beveiligingsdiensten via het Netskope One Platform. Dit platform combineert geavanceerde technologieën zoals de Zero Trust Engine, NewEdge-netwerk en uitgebreide DLP-functionaliteiten om zowel beveiliging als connectiviteit te optimaliseren~\autocite{Netskope2025-1}.
+Netskope is gekozen als het platform voor de implementatie van een SASE-architectuur binnen de hybride cloudomgeving van het bedrijf. Netskope onderscheidt zich door zijn geïntegreerde benadering van netwerk- en beveiligingsdiensten via het Netskope One Platform. 
+
+\vspace{2ex}
+
+Dit platform combineert geavanceerde technologieën zoals de Zero Trust Engine, NewEdge-netwerk en uitgebreide DLP-functionaliteiten om zowel beveiliging als connectiviteit te optimaliseren~\autocite{Netskope2025-1}.
 
 \subsection{Kernpijlers}
 De SASE-architectuur van Netskope rust op vier essentiële kernpijlers die samen een omvattend beveiligingsraamwerk vormen, specifiek afgestemd op de uitdagingen van moderne hybride cloudomgevingen zoals die van een software agency bedrijf:
@@ -71,21 +93,32 @@ De SASE-architectuur van Netskope rust op vier essentiële kernpijlers die samen
 
 \subsection{Waarom Netskope?}
 In tegenstelling tot andere SASE-leveranciers biedt Netskope een volledig geïntegreerd platform zonder afhankelijkheid van meerdere leveranciers of gefragmenteerde oplossingen. Dit vermindert operationele complexiteit, verbetert de gebruikerservaring en zorgt voor consistente beleidsimplementatie over alle netwerk- en beveiligingslagen heen~\autocite{Netskope2025-1}.
+
+\vspace{2ex}
+
 Met deze geïntegreerde aanpak biedt Netskope een robuuste oplossing voor bedrijven die willen overstappen naar een modern SASE-model. Het platform combineert geavanceerde technologieën met schaalbare architectuur, wat essentieel is voor het waarborgen van veiligheid, prestaties en compliance in hybride omgevingen.
 
 \section{Zero Trust}
 Zero Trust is een model dat gebaseerd is op de stelling dat geen enkel apparaat, gebruiker of systeem automatisch te vertrouwen is, zelfs niet als deze zich binnen het netwerk bevinden~\autocite{Netskope2024}.
+
+\vspace{2ex}
+
 De nadruk ligt op het continu verifiëren van gebruikersidentiteit, het beperken van toegang tot strikt noodzakelijke bronnen (least privileged access), en het monitoren van netwerkactiviteiten om verdachte handelingen snel te identificeren en aan te pakken.
 
+\vspace{2ex}
 
 Volgens Microsoft is de kern van het Zero Trust-model gebaseerd op drie belangrijke principes: altijd verifiëren, nooit vertrouwen; minimaal toegang verlenen; en schade beperken bij inbreuk. Dit houdt in dat de toegang tot systemen of data niet alleen wordt beperkt op basis van de locatie van de gebruiker of het apparaat, maar altijd afhangt van de identiteit, rol en andere specifieke toegangsbeperkingen~\autocite{Microsoft2024}. 
 
+\vspace{2ex}
 
 Kaspersky benadrukt het belang van de technologieën die Zero Trust mogelijk maken, zoals multi-factor authenticatie (MFA), versleuteling van communicatie en geavanceerde netwerkmonitoringtool. ``De omslag naar hybride werken en de toename van het aantal cyberbedreigingen die ook nog eens steeds complexer worden, betekent dat cyberweerbaarheid voor veel organisaties de hoogste prioriteit heeft.'' Cyberweerbaarheid houdt in dat we onze focus moeten verleggen van preventie van cyberaanvallen naar de acceptatie dat dit soort aanvallen tegenwoordig onvermijdelijk zijn en we ervoor moeten zorgen dat organisaties zo goed mogelijk zijn voorbereid op eventuele aanvallen en snel en effectief kunnen herstellen. Zero Trust speelt een belangrijke rol in verbeterde cyberweerbaarheid~\autocite{Kaspersky2024}.
+
+\vspace{2ex}
 
 NIST definieert \textbf{Zero Trust Architecture (ZTA)} als een volledig cybersecurity-plan dat vertrouwen nooit impliciet verleent, maar continu evalueert. ZTA richt zich op het beschermen van alle resources – van gegevensbronnen tot netwerkapparatuur – door strikte authenticatie, autorisatie en encryptie toe te passen bij elke toegangsverzoek~\autocite{NIST2020}.
 
 \subsection{Kernprincipes van Zero Trust}
+\label{sec:Kernprincipes van Zero Trust}
 Zeven fundamentele principes vormen de basis van NIST’s Zero Trust-architectuur~\autocite{NIST2020}:  
 
 \begin{itemize}
@@ -138,16 +171,32 @@ Netskope implementeert de principes die besproken worden in sectie~\ref{sec:Kern
   \item \textbf{Data PEP}: zorgt voor databescherming en compliance
 \end{itemize}
 
-Volgende Figuur~\ref{fig:Netskope-PEP} toont een uitgebreid Zero Trust architectuurmodel dat drie hoofdcomponenten naadloos integreert: identiteits- en toegangsbeheer, resourcebescherming en controlefuncties. Aan de linkerzijde begint het proces met twee mogelijke entiteiten (niet-persoons- of gebruikersentiteiten) die authenticatie en autorisatie ondergaan, waarbij device-compliance, locatie, toegangstype en -methode worden geëvalueerd in samenwerking met een gefedereerde identiteitsservice (IDP). Het middelste gedeelte illustreert de gelaagde resourcebeveiliging met drie opeenvolgende autorisatieniveaus: resource-, applicatie- en datautorisatie, elk met hun eigen Policy Enforcement Point (PEP) en specifieke beveiligingscapaciteiten zoals microsegmentatie, app-instancing en datarechten management. De rechterzijde vertegenwoordigt het centrale controlesysteem dat bestaat uit een Policy Engine die wordt ondersteund door SOAR (Security Orchestration, Automation and Response), analytische vertrouwensscoring, SIEM (Security Information and Event Management) en event logging. De blauwe pijlen tonen hoe de Policy Engine directe controle uitoefent over alle PEPs, terwijl de stippellijnen de feedback-loops illustreren die essentieel zijn voor een dynamisch Zero Trust beveiligingsmodel dat voortdurend wordt bijgesteld op basis van actuele dreigingsinformatie en gebruikersgedrag, wat cruciaal is voor een effectieve SASE-implementatie in hybride cloudomgevingen zoals die van een software agency bedrijf.~\autocite{Netskope2024}.
+Figuur~\ref{fig:Netskope-PEP} toont een uitgebreid Zero Trust architectuurmodel dat drie hoofdcomponenten naadloos integreert: identiteits- en toegangsbeheer, resourcebescherming en controlefuncties. 
+
+\vspace{2ex}
+
+Aan de linkerzijde begint het proces met twee mogelijke entiteiten (niet-persoons- of gebruikersentiteiten) die authenticatie en autorisatie ondergaan, waarbij device-compliance, locatie, toegangstype en -methode worden geëvalueerd in samenwerking met een gefedereerde identiteitsservice (IDP). 
+
+\vspace{2ex}
+
+Het middelste gedeelte illustreert de gelaagde resourcebeveiliging met drie opeenvolgende autorisatieniveaus: resource-, applicatie- en datautorisatie, elk met hun eigen Policy Enforcement Point (PEP) en specifieke beveiligingscapaciteiten zoals microsegmentatie, app-instancing en datarechten management. 
+
+\vspace{2ex}
+
+De rechterzijde vertegenwoordigt het centrale controlesysteem dat bestaat uit een Policy Engine die wordt ondersteund door SOAR (Security Orchestration, Automation and Response), analytische vertrouwensscoring, SIEM (Security Information and Event Management) en event logging. 
+
+\vspace{2ex}
+
+De blauwe pijlen tonen hoe de Policy Engine directe controle uitoefent over alle PEPs. De stippellijnen illustreren daarentegen de feedback-loops die essentieel zijn voor een dynamisch Zero Trust beveiligingsmodel. Dit model wordt voortdurend bijgesteld op basis van actuele dreigingsinformatie en gebruikersgedrag. Deze aanpak is cruciaal voor een effectieve SASE-implementatie in hybride cloudomgevingen, zoals die van een software agency bedrijf.~\autocite{Netskope2024}.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Netskope-PEP.png}
-  \caption[]{Policy Enforcement Points (PEPs) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \caption[Netskope Policy Enforcement Points (PEPs)]{Policy Enforcement Points (PEPs) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
   \label{fig:Netskope-PEP}
 \end{figure}
 
 
- Netskope's platform integreert deze technologieën in een uitgebreid security framework dat onder andere bestaat uit:
+Netskope's platform integreert deze technologieën in een uitgebreid security framework dat onder andere bestaat uit:
 
 \begin{itemize}
   \item Device en user authenticatie via een client certificaat infrastructuur
@@ -156,48 +205,75 @@ Volgende Figuur~\ref{fig:Netskope-PEP} toont een uitgebreid Zero Trust architect
   \item Real-time threat protection met meer dan 40 threat intelligence feeds
 \end{itemize}
 
-De volgende Figuur~\ref{fig:Netskope-user-and-device} beschrijft het uitgebreide authenticatie- en validatieproces voor gebruikers en apparaten binnen de Netskope Zero Trust implementatie. De workflow begint bij een gebruiker die toegang vraagt, waarna eerst de apparaatconfiguratie wordt gevalideerd en de locatie wordt bepaald via on-premise detectie. Het diagram toont drie verschillende authenticatiepaden afhankelijk van het type: Domain Multi-User, Domain Single User of SAML/SSO, elk met specifieke verificatiestappen. Centrale elementen in dit proces zijn de UPN (User Principal Name) extractie voor identificatie, LDAP-gebruikersverificatie, groepsautorisatie via LDAP of SAML, en certificaatvalidatie. De Netskope Control Plane coördineert de verschillende autorisatieprocessen, past beveiligingsconfiguraties toe en zorgt voor de opzet van een versleutelde tunnel voor veilige communicatie. Rechts in het diagram worden de gebruikersattributen weergegeven die aan Netskope worden verzonden, waaronder UPN, e-mail, apparaatbeheersstatus, geïnstalleerde applicaties en diverse metadata, wat bijdraagt aan een context-bewuste beveiligingsbeoordeling in een hybride cloudscenario~\autocite{Netskope2024}.
+Figuur~\ref{fig:Netskope-user-and-device} beschrijft het uitgebreide authenticatie- en validatieproces voor gebruikers en apparaten binnen de Netskope Zero Trust implementatie. 
+
+\vspace{2ex}
+
+De workflow begint bij een gebruiker die toegang vraagt, waarna eerst de apparaatconfiguratie wordt gevalideerd en de locatie wordt bepaald via on-premise detectie. Het diagram toont drie verschillende authenticatiepaden afhankelijk van het type: Domain Multi-User, Domain Single User of SAML/SSO, elk met specifieke verificatiestappen. Centrale elementen in dit proces zijn de UPN (User Principal Name) extractie voor identificatie, LDAP-gebruikersverificatie, groepsautorisatie via LDAP of SAML, en certificaatvalidatie. De Netskope Control Plane coördineert de verschillende autorisatieprocessen, past beveiligingsconfiguraties toe en zorgt voor de opzet van een versleutelde tunnel voor veilige communicatie. Rechts in het diagram worden de gebruikersattributen weergegeven die aan Netskope worden verzonden, waaronder UPN, e-mail, apparaatbeheersstatus, geïnstalleerde applicaties en diverse metadata, wat bijdraagt aan een context-bewuste beveiligingsbeoordeling in een hybride cloudscenario~\autocite{Netskope2024}.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Netskope-user-and-device.png}
-  \caption[]{Gebruiker \& Apparaat authenticatie in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \caption[Netskope Gebruiker \& Apparaat authenticatie]{Gebruiker \& Apparaat authenticatie in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
   \label{fig:Netskope-user-and-device}
 \end{figure}
 
-De Figuur~\ref{fig:Netskope-DLP} illustreert het Data Loss Prevention (DLP) en Digital Rights Management (DRM) implementatieproces binnen het Netskope Zero Trust raamwerk. Het proces start met een inline toegangsverzoek dat vervolgens door meerdere analyselagen gaat, beginnend met bestandsmetadata- en contentscanning, gevolgd door compliance policy evaluatie en DLP regelprofielen. Bijzonder aan deze workflow is de parallelle toepassing van zes geavanceerde analysetechnieken: Keyword Matching, Indexed Document Matching, Exact Data Matching, OCR/Fingerprinting, Image Classifiers en Text Classifiers. De Data PEP fungeert als centraal beslissingspunt dat op basis van Booleaanse logica bepaalt welke actie moet worden ondernomen. De mogelijke uitkomsten omvatten directe toegang (Allow), toegangsweigering (Block), remediëring met extra beveiligingsmaatregelen zoals multi-factor authenticatie of encryptie, of beperkte toegang met uitzonderingen. Dit gehele proces vormt een diepgaande beveiligingslaag die specifiek gericht is op databescherming en preventie van datalekken binnen het SASE-architectuurraamwerk~\autocite{Netskope2024}.
+De Figuur~\ref{fig:Netskope-DLP} illustreert het Data Loss Prevention (DLP) en Digital Rights Management (DRM) implementatieproces binnen het Netskope Zero Trust raamwerk. 
+
+\vspace{2ex}
+
+Het proces start met een inline toegangsverzoek dat vervolgens door meerdere analyselagen gaat, beginnend met bestandsmetadata- en contentscanning, gevolgd door compliance policy evaluatie en DLP regelprofielen. Bijzonder aan deze workflow is de parallelle toepassing van zes geavanceerde analysetechnieken: Keyword Matching, Indexed Document Matching, Exact Data Matching, OCR/Fingerprinting, Image Classifiers en Text Classifiers. De Data PEP werkt als centraal beslissingspunt dat op basis van Booleaanse logica bepaalt welke actie moet worden ondernomen. De mogelijke uitkomsten omvatten directe toegang (Allow), toegangsweigering (Block), remediëring met extra beveiligingsmaatregelen zoals multi-factor authenticatie of encryptie, of beperkte toegang met uitzonderingen. 
+
+\vspace{2ex}
+
+Dit gehele proces vormt een diepgaande beveiligingslaag die specifiek gericht is op databescherming en preventie van datalekken binnen het SASE-architectuurraamwerk~\autocite{Netskope2024}.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Netskope-DLP.png}
-  \caption[]{Data Loss Prevention (DLP) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \caption[Netskope Data Loss Prevention (DLP)]{Data Loss Prevention (DLP) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
   \label{fig:Netskope-DLP}
 \end{figure}
 
-Deze Figuur~\ref{fig:Netskope-SD-WAN} toont een gedetailleerd stroomdiagram voor de implementatie van Zero Trust principes binnen een Software-Defined Wide Area Network (SD-WAN) omgeving met Netskope. De workflow begint bij een entiteit die toegang zoekt tot een applicatie en doorloopt vervolgens verschillende beveiligingslagen. Eerst vindt device- en gebruikersverificatie plaats via het Netskope Control Plane, gevolgd door authenticatie en autorisatie. Na succesvolle authenticatie wordt de verbinding via een SD-WAN Endpoint geleid en een Port 443 Tunnel opgezet. Het cruciale beslissingspunt is de Resource PEP (Policy Enforcement Point) die evalueert of toegang moet worden verleend op basis van vooraf gedefinieerde beveiligingsregels. Bij goedkeuring wordt de verbinding via de Netskope Stitcher doorgestuurd naar de SD-WAN Publisher die de verbinding beschikbaar maakt op het oorspronkelijke protocol/poort voor de applicatie. Bij afwijzing wordt de toegang geblokkeerd, de gebruiker genotificeerd, activiteiten gelogd en risicobeoordelingen bijgewerkt, wat essentieel is voor voortdurende beveiligingsmonitoring in een hybride cloudomgeving~\autocite{Netskope2024}.
+Figuur~\ref{fig:Netskope-SD-WAN} toont een gedetailleerd stroomdiagram voor de implementatie van Zero Trust principes binnen een Software-Defined Wide Area Network (SD-WAN) omgeving met Netskope. 
+
+\vspace{2ex}
+
+De workflow begint bij een entiteit die toegang zoekt tot een applicatie en doorloopt vervolgens verschillende beveiligingslagen. 
+
+\vspace{2ex}
+
+Eerst vindt device- en gebruikersverificatie plaats via het Netskope Control Plane, gevolgd door authenticatie en autorisatie. Na succesvolle authenticatie wordt de verbinding via een SD-WAN Endpoint geleid en een Port 443 Tunnel opgezet. Het cruciale beslissingspunt is de Resource PEP (Policy Enforcement Point) die evalueert of toegang moet worden verleend op basis van vooraf gedefinieerde beveiligingsregels. Bij goedkeuring wordt de verbinding via de Netskope Stitcher doorgestuurd naar de SD-WAN Publisher die de verbinding beschikbaar maakt op het oorspronkelijke protocol/poort voor de applicatie. Bij afwijzing wordt de toegang geblokkeerd, de gebruiker genotificeerd, activiteiten gelogd en risicobeoordelingen bijgewerkt~\autocite{Netskope2024}.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Netskope-SD-WAN.png}
-  \caption[]{Software Defined WAN (SD-WAN) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
+  \caption[Netskope Software Defined WAN (SD-WAN)]{Software Defined WAN (SD-WAN) in Netskope's Zero Trust Security Service Edge (SSE) platform~\autocite{Netskope2024}}
   \label{fig:Netskope-SD-WAN}
 \end{figure}
 
-
-De implementatie van Zero Trust vereist zorgvuldige planning, vooral in complexe netwerkomgevingen.
-
+\vspace{2ex}
 
 Uit onderzoek van MIT Lincoln Laboratory~\autocite{MIT2022} blijkt dat Zero Trust-architecturen bijzonder effectief zijn tegen insiderdreigingen, zoals misbruik van gecompromitteerde credentials of onbevoegde toegang door eigen medewerkers. 
 Dit risico is relevant voor het onderzochte bedrijf, waar ontwikkelaars en externe partners toegang hebben tot gevoelige klantdata. 
+
+\vspace{2ex}
+
 MIT benadrukt dat een succesvolle Zero Trust-implementatie niet alleen technologische verandering vereist (zoals granular access control), maar ook organisatorische aanpassingen, zoals het trainen van medewerkers en het opstellen van een duidelijk beleid voor toegangsverificatie. 
 Dit sluit aan bij Netskope’s focus op User \& Device workflows en gedragsanalyse, waarbij continue verificatie van gebruikers en apparaten centraal staat. 
 Tegelijkertijd waarschuwt MIT voor de complexiteit van hybride implementaties, waarbij on-premises systemen en clouddiensten geïntegreerd moeten worden—een uitdaging die het bedrijf direct ondervindt en waar Netskope’s SSE-platform een antwoord op biedt.
 
-Netskope biedt hiervoor een gestructureerde aanpak met specifieke operationele workflows:
+\vspace{2ex}
 
+Netskope biedt hiervoor een gestructureerde aanpak met specifieke operationele workflows:
 \begin{itemize}
   \item \textbf{User/Device workflow}: voor initiële authenticatie en continue validatie
   \item \textbf{Network/Resource workflow}: voor toegangscontrole en segmentatie
   \item \textbf{Data Protection workflow}: voor databescherming en compliance
 \end{itemize}
 
+\vspace{2ex}
+
 Het onderzoek van Mutemwa et al~\autocite{ACM2021} levert een belangrijke bijdrage aan ons begrip van de veranderende aard van cybersecurity in een post-pandemische wereld. Hun studie bevestigt dat traditionele perimeterbescherming fundamenteel is uitgedaagd door de verschuiving naar gedistribueerde werkomgevingen.
 De auteurs besluiten dat organisaties moeten evolueren van een perimeter-gebaseerd beveiligingsmodel naar een meer complete benadering die rekening houdt met de realiteit van een uitgebreide, doorlatende bedrijfsgrens. Dit vereist een heroverweging van beveiligingsarchitecturen, met grotere nadruk op identiteitsbeheer, endpoint-beveiliging en gebruikerseducatie.
+
+\vspace{2ex}
+
 Deze studie onderstreept de noodzaak voor organisaties om hun cybersecurity-strategieën aan te passen aan een wereld waarin de traditionele grenzen tussen “binnen” en “buiten” het bedrijfsnetwerk steeds vager worden, een conclusie die aansluit bij de bredere verschuiving in de richting van zero-trust beveiligingsmodellen in de cybersecurity-gemeenschap.

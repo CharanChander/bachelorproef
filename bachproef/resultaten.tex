@@ -1,0 +1,120 @@
+%%=============================================================================
+%% Resultaten
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Resultaten}{Results}}%
+\label{ch:resultaten}
+
+Dit hoofdstuk presenteert de concrete resultaten van de SASE-implementatie met Netskope, gebaseerd op de data die verzameld is via het Advanced Analytics dashboard (zie Figuur \ref{fig:dashboard-1}, \ref{fig:dashboard-2} en \ref{fig:dashboard-3}) gedurende de proof of concept periode van 14 weken. De resultaten tonen de effectiviteit van de geïmplementeerde beveiligingsarchitectuur binnen het bedrijf.
+
+
+\section{Implementatiestrategie en Methodologie}
+De SASE-implementatie werd uitgevoerd volgens een gefaseerde aanpak waarbij onderscheid wordt gemaakt tussen company-wide uitrol en testgroep-specifieke functionaliteiten:
+
+\textbf{Company-wide implementatie}:
+\begin{itemize}
+    \item Netskope Client deployment via Jamf op alle bedrijfsapparaten
+    \item Zero Trust Network Access (ZTNA) voor toegang tot private applicaties
+    \item Dynamic steering voor private applications gebaseerd op gebruikerslocatie
+\end{itemize}
+
+\vspace{2ex}
+
+\textbf{Testgroep-specifieke implementatie}:
+\begin{itemize}
+    \item Next Gen Secure Web Gateway (SWG) voor internetverkeer
+    \item Cloud Access Security Broker (CASB) monitoring
+    \item Uitgebreide User Behavior Analytics (UBA)
+    \item AI Usage monitoring
+\end{itemize}
+
+\section{Company-wide Implementatie}
+\subsection{Totale apparatenfleet}
+Het Advanced Analytics dashboard toont een company-wide implementatie van 122 apparaten verdeeld over 121 gebruikers binnen de organisatie. Deze cijfers reflecteren een groot deel van de apparatenfleet van het software agency bedrijf en vormen de basis voor de SASE-architectuur implementatie \ref{fig:dashboard-1}.
+
+\subsection{Private Applicaties}
+Voor Zero Trust Network Access functionaliteit toont het dashboard dat 24,14\% van de apparaten Private Access heeft ingeschakeld, terwijl 75,86\% nog disabled staat. Deze cijfers demonstreren dat de ZTNA-component succesvol operationeel is binnen het actieve deel van de gebruikersbasis, waarbij dynamic steering voor private applicaties effectief functioneert voor zowel kantoor- als remote gebruikers \ref{fig:dashboard-1}.
+
+\section{Testgroep-specifieke Implementatie}
+\subsection{Internet Security Status}
+De Internet Security status toont een beperktere implementatie met slechts 4,13\% enabled, 10,74\% in backed-off status, en 85,12\% disabled. Deze distributie bevestigt dat de SWG-functionaliteiten primair binnen de testgroep worden geëvalueerd voordat company-wide uitrol plaatsvindt. Dit komt onder ander ook door de vele problemen die de Netskope Client heeft veroorzaakt door SSL certificaat interferentie \ref{fig:dashboard-1}.
+
+\subsection{Malware en Threat Protection}
+Gedurende de evaluatieperiode heeft het Netskope platform geen malware-instanties gedetecteerd binnen de geactiveerde scope, zoals weergegeven door de "0 Malware Detected" metric. Dit kan duiden op een effectieve preventieve beveiliging of een relatief schone testomgeving \ref{fig:dashboard-1}.
+
+\subsection{Malicious Sites Blocking}
+Het systeem heeft 3 malicious sites succesvol geblokkeerd gedurende de testperiode, met specifieke detecties op de volgende data:
+\begin{itemize}
+    \item 15 mei 2025: maltrends.be/spotted... (1 alert, 1 user)
+    \item 8 mei 2025: inc-com.info/BaseSyst... (1 alert, 1 user)
+    \item 7 mei 2025: sec-content.co.uk/sss... (1 alert, 1 user)
+\end{itemize}
+Deze geblokkeerde sites tonen aan dat de threat intelligence feeds effectief functioneren en real-time bescherming bieden tegen bekende malicious domains \ref{fig:dashboard-1}.
+
+\subsection{Data Loss Prevention (DLP)}
+Binnen de testgroep heeft het DLP-systeem 2 gebruikers met DLP violations geïdentificeerd, resulterend in 1 bestand met DLP violations. Deze cijfers demonstreren dat het DLP-beleid actief monitort en potentiële data-exfiltratie detecteert zonder de workflow significant te verstoren \ref{fig:dashboard-2}.
+
+\vspace{2ex}
+
+De DLP Policy Alerts tonen de volgende severity-niveaus
+\begin{itemize}
+    \item Medium risico: 30.77\% van de alerts
+    \item Low risico: 23.08\% van de alerts
+\end{itemize}
+Deze verdeling suggereert dat het grootste deel van de DLP-activiteit zich in de medium-risk categorie bevindt \ref{fig:dashboard-2}.
+
+\subsection{User Behavior Analytics (UBA)}
+De UBA-component heeft uitgebreide gebruikersactiviteit gemonitord via de flow matrix visualisatie, waarbij verschillende categorieën van user behavior worden getracked:
+
+\textbf{Risk Categories Identified}
+\begin{itemize}
+    \item Bulk Failed Logins: Potentiële credential compromise attempts
+    \item Bulk Delete/Download/Upload: Ongebruikelijke data transfer patronen
+    \item Rare Events: Afwijkende gebruikersactiviteiten
+\end{itemize}
+
+\vspace{2ex}
+
+Het UBA-systeem monitort gebruikersgedrag across diverse platforms:
+
+\textbf{Application Monitoring Scope}
+\begin{itemize}
+    \item Google ecosystem: Google Drive, Google Calendar, Google Photos
+    \item Communication platforms: Zoom, Slack, WhatsApp
+    \item Development tools: GitHub, GitLab
+    \item Productivity tools: Atlassian Confluence, Amazon S3, Figma
+\end{itemize}
+
+\subsection{AI Usage Monitoring}
+Binnen de gemonitorde scope heeft 45\% van de gebruikers toegang tot AI-applicaties, terwijl 18\% actief queries uitvoert.
+
+\vspace{2ex}
+
+\textbf{AI Platform Usage Distribution}
+De meest gebruikte AI-platforms gebaseerd op event volume zijn:
+\begin{itemize}
+    \item ChatGPT: ~2.100 events (dominante positie)
+    \item Perplexity AI: ~1.600 events
+    \item Anthropic Claude: ~900 events
+    \item OpenAI: ~600 events
+    \item Hugging Face: verwaarloosbaar aantal events
+    \item Mistral AI Le Chat: verwaarloosbaar aantal events
+\end{itemize}
+
+\vspace{2ex}
+
+\textbf{Policy Enforcement Actions}
+De Action Taken analysis toont diverse policy responses:
+\begin{itemize}
+    \item \textbf{Proceed actions:} Toegestane AI-interacties
+    \item \textbf{User alerts:} Coaching voor risico-activiteiten
+    \item \textbf{Blocked actions:} Preventie van non-compliant usage
+    \item \textbf{Proceed (Cached):} Geoptimaliseerde herhaalde toegang
+\end{itemize}
+
+\section{Conclusie}
+Het dashboard demonstreert een gefaseerde maar effectieve SASE-implementatie, waarbij company-wide Private Access deployment succesvol verloopt, samen met intensieve validatie van SWG/CASB functionaliteiten aan de hand van een testgroep. De beveiligingsmetrieken tonen proactieve threat detection (3 malicious sites blocked), effectieve DLP coverage (2 violations detected), en waardevolle business intelligence over AI-usage patterns.
+
+\vspace{2ex}
+
+Deze resultaten vormen een solide basis voor de aanbeveling tot volledige productie-implementatie van alle SASE-componenten.

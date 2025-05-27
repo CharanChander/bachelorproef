@@ -14,4 +14,84 @@
 % Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
 %onderzoek?
 
+\section{Beantwoording van de onderzoeksvraag}
 
+De centrale onderzoeksvraag "Hoe kan een SASE-architectuur worden geïmplementeerd binnen de hybride cloudomgeving van een softwarebedrijf gebruikmakend van het Netskope platform?" kan op basis van dit onderzoek en de gemeten resultaten positief worden beantwoord. Het ontwikkelde proof of concept toont concrete en meetbare resultaten die de effectiviteit van de SASE-implementatie valideren.
+
+\vspace{2ex}
+
+De implementatie heeft aangetoond dat de geïdentificeerde netwerk- en security-uitdagingen in de hybride cloudomgeving effectief kunnen worden aangepakt. De traditionele perimetergebaseerde beveiligingsaanpak, die onvoldoende veiligheid en flexibiliteit bood, is vervangen door een Zero Trust-model dat contextbewuste beveiliging realiseert ongeacht gebruikerslocatie of apparaattype. De intelligente traffic steering op basis van gebruikerslocatie, gecombineerd met Okta-integratie voor identiteitsbeheer, zorgt voor een optimale balans tussen beveiliging, gebruikerservaring en prestaties.
+
+\section{Bijdrage aan het onderzoeksdomein}
+
+Dit onderzoek levert een concrete bijdrage aan het domein van SASE-implementaties door het ontwikkelen van een praktische implementatiemethodologie specifiek voor software agency bedrijven. De vierfasenaanpak, literatuuronderzoek, requirements analyse, proof of concept ontwikkeling, en validatie, biedt een herhaalbaar raamwerk voor vergelijkbare implementaties. 
+
+\section{Meerwaarde voor het vakgebied en doelgroep}
+
+Voor IT-professionals en bedrijven biedt dit onderzoek directe meerwaarde, door het demonstreren van een schaalbare beveiligingsarchitectuur die voldoet aan moderne compliance-eisen zonder de operationele flexibiliteit te beperken. De proof of concept toont aan dat SASE-implementaties niet alleen theoretisch haalbaar zijn, maar ook praktisch realiseerbaar binnen bestaande infrastructuren.
+
+\vspace{2ex}
+
+De integratie met populaire enterprise-tools zoals Okta voor identiteitsbeheer en Jamf voor device management illustreert hoe SASE naadloos kan worden geïntegreerd in bestaande IT-ecosystemen. Dit vermindert de implementatierisico's en verlaagt de drempel voor adoptie door andere organisaties in de sector.
+
+\section{Kritische reflectie op het resultaat}
+
+De resultaten die in Hoofdstuk \ref{ch:resultaten} worden samengevat, waren grotendeels conform de verwachtingen, hoewel enkele aspecten positiever uitvielen dan initieel voorzien. 
+
+\vspace{2ex}
+
+De gebruikersacceptatie van de Netskope Client bleek lager dan verwacht, desondanks de transparante communicatiestrategie en de minimale impact op de dagelijkse workflow. 
+
+\vspace{2ex}
+
+De intelligente traffic steering functionaliteit presteerde beter dan geanticipeerd, met nauwelijks merkbare latentieverschillen voor eindgebruikers. Toch waren de eindgebruikers aanvankelijk terughoudend om de nieuwe client te accepteren, wat wijst op de noodzaak van voortdurende change management inspanningen en training.
+
+\vspace{2ex}
+
+Een positief resultaat was de rijkdom aan analytische gegevens die het Netskope platform genereert. Het Advanced Analytics dashboard biedt inzichten die verder gaan dan louter beveiligingsmonitoring en ook waardevolle business intelligence leveren over applicatiegebruik en gebruikersgedrag.
+
+\vspace{2ex}
+
+Een onverwacht technisch probleem was de SSL certificaat interferentie met CLI tools, waarbij applicaties Netskope's SSL Inspection functionaliteit interpreteerden als potentiële Man-in-the-Middle attacks. Dit probleem werd succesvol opgelost door application-specific bypasses en selective SSL inspection policies, maar onderstreept het belang van uitgebreide applicatie-inventarisatie.
+
+\section{Beperkingen en vervolgonderzoek}
+
+Een belangrijke beperking van dit onderzoek is de focus op één specifiek SASE-platform (Netskope), waardoor vergelijkende analyses met andere marktspelers zoals Zscaler of Palo Alto Prisma buiten beschouwing blijven. Toekomstig onderzoek zou kunnen focussen op multi-vendor SASE-implementaties of hybride configuraties die verschillende platforms combineren.
+
+\vspace{2ex}
+
+Daarnaast beperkte de onderzoeksperiode van 14 weken de mogelijkheid om langetermijneffecten en gebruikersadoptie over meerdere maanden te evalueren. Een landurig onderzoek zou meer inzicht kunnen geven in de evolutie van gebruikersgedrag en de optimalisatie van security policies over tijd.
+
+\section{Conclusie}
+
+Deze bachelorproef demonstreert dat SASE-architectuur via Netskope een praktisch haalbare oplossing biedt voor moderne hybride cloudomgevingen. De combinatie van company-wide Private Access implementatie (122 apparaten under management) met een testgroep van SWG/CASB functionaliteiten toont een effectieve implementatiestrategie die risico's mitigeert terwijl schaalbaarheid wordt gevalideerd.
+
+\vspace{2ex}
+
+De gemeten resultaten van 3 geblokkeerde malicious sites tot 2.100+ AI-events bij ChatGPT, illustreren niet alleen traditionele beveiligingsvoordelen, maar genereren ook unexpected business intelligence die verder gaat dan conventionele security monitoring. Deze concrete cijfers en inzichten vormen een solide basis voor de aanbeveling tot volledige productie-implementatie van alle SASE-componenten binnen software agency bedrijven.
+
+\section{Onverwachte uitdagingen}
+\subsection{Eindgebruikers}
+Een van de grootste uitdagingen die ik niet had voorzien was het change management-aspect van de implementatie. Technisch gezien verliep de configuratie van Netskope vrij vlot, maar het overtuigen van eindgebruikers van de voordelen en het wegnemen van privacy-zorgen bleek veel complexer dan verwacht. Dit heeft mij geleerd dat succesvolle IT-implementaties evenveel over menselijke factoren gaan als over technologie.
+
+\subsection{SSL certificaat}
+Tijdens de implementatie van de Netskope SASE-architectuur ontstond een onverwacht technisch probleem waarbij verschillende applicaties, voornamelijk Command Line Interface (CLI) tools, faalden in hun normale werking. Deze applicaties genereerden SSL/TLS-gerelateerde fouten en weigerden verbindingen tot stand te brengen met externe services.
+
+\vspace{2ex}
+
+Het probleem werd veroorzaakt door Netskope's SSL Inspection functionaliteit, waarbij de Netskope Client een eigen SSL certificaat plaatst op uitgaande HTTPS-pakketten als onderdeel van de Next Gen Secure Web Gateway (SWG) inspectie. Deze techniek, bekend als SSL decryption, stelt de SASE-oplossing in staat om versleuteld verkeer te inspecteren op malware, data loss prevention (DLP) violations, en policy enforcement.
+
+\vspace{2ex}
+
+CLI tools en verschillende enterprise applicaties interpreteren deze certificaat-substitutie als een potentiële Man-in-the-Middle (MiTM) attack, wat resulteert in:
+
+\begin{itemize}
+    \item \textbf{Certificate Pinning violations}: Applicaties die specifieke certificaten verwachten van bekende services
+    \item \textbf{Trust store conflicts}: Tools die hun eigen certificaat stores hanteren en geen system-wide certificaat updates accepteren
+    \item \textbf{API connectivity failures}: RESTful API clients die strikte SSL verificatie hanteren
+    \item \textbf{Package managers}: Tools zoals npm, pip, en apt die beveiligde repositories benaderen
+\end{itemize}
+
+\section{Persoonlijke reflectie}
+\subsection{Leercurve}
+Dit onderzoek heeft mijn begrip van moderne netwerkbeveiliging compleet veranderd. Toen ik begon met dit project, was mijn kennis van Zero Trust en SASE-architecturen grotendeels onbestaand. Het praktisch implementeren van een volledige Netskope-omgeving heeft mij echter doen inzien hoe complex en veelomvattend deze transformatie werkelijk is. De overgang van perimetergebaseerde beveiliging naar een Zero Trust-model vereist niet alleen technische aanpassingen, maar vraagt ook om een complete herziening van hoe organisaties over beveiliging denken. Het vraagt ook een enorme inspanning om de werknemers achter de nieuwe technologie te krijgen, dit was een van de grootste uitdagingen die ik tegenkwam die ik niet had verwacht.

@@ -5,21 +5,29 @@
 \chapter{\IfLanguageName{dutch}{Proof of Concept uitwerking}{Proof of Concept Implementation}}%
 \label{ch:proof of concept implementation}
 
-In dit hoofdstuk wordt de proof of concept ontwikkeld, deze zal aan de requirements voldoen die in hoofdstuk \ref{ch:requirements analyse} zijn opgesteld. Deze proof of concept zal gebaseerd zijn op de voorbereiding uit hoofdstuk \ref{ch:proof of concept preparation}.
+In dit hoofdstuk wordt de proof of concept ontwikkeld, deze zal aan de requirements voldoen die in Hoofdstuk \ref{ch:requirements analyse} zijn opgesteld. Deze proof of concept zal gebaseerd zijn op de voorbereiding uit Hoofdstuk \ref{ch:proof of concept preparation}.
 
 \section{Netskope Client}
 
 \subsection{Jamf}
 Het bedrijf maakt gebruik van de software tool Jamf voor het beheren van de apparaten van de werknemers.
 
+\vspace{2ex}
+
 Jamf is een toonaangevende Mobile Device Management (MDM)-oplossing die specifiek is ontwikkeld voor het beheer van Apple-apparaten binnen organisaties. De oplossing biedt geavanceerde mogelijkheden voor implementatie, beveiliging en beheer, waardoor deze bijzonder geschikt is voor een enterprise-omgeving.  
 
+\vspace{2ex}
+
 Een belangrijk onderdeel van Jamf is de zero-touch implementatie en onboarding, waarbij apparaten direct na het uitpakken automatisch worden geconfigureerd via Apple Business Manager of Apple School Manager.  Dit maakt het mogelijk om de Netskope Client te installeren zonder dat de gebruiker zelf iets hoeft te doen.
+
+\vspace{2ex}
 
 Op het gebied van gedecentraliseerd apparaatbeheer maakt Jamf gebruik van Blueprints, gebaseerd op Apple’s Declarative Device Management, om configuraties, app-installaties en restricties automatisch toe te passen. Smart Groups stellen dynamisch devicegroepen samen op basis van kenmerken zoals OS-versie of locatie, met geautomatiseerde acties om het beheer te stroomlijnen. Via de Self Service+ portal kunnen gebruikers zelf apps en updates installeren, wat gepaard gaat met ingebouwde security-awareness trainingen om het risico op menselijke fouten te verminderen~\autocite{Jamf2025}.
 
 \subsection{Netskope Client}
 We kunnen de Netskope Client installeren via Jamf. Op die manier kunnen we de installatie automatiseren zonder manuele tussenkomst van de gebruiker.
+
+\vspace{2ex}
 
 Om de Netskope Client te installeren via Jamf, moeten we de volgende stappen volgen~\autocite{Netskope2025-9}:
 
@@ -75,6 +83,8 @@ Voor onze proof of concept is gekozen voor een gedifferentieerde aanpak:
 
 De traffic steering-configuratie wordt centraal beheerd in de Netskope-beheerconsole en wordt vervolgens automatisch doorgevoerd naar alle Netskope Clients.
 
+\vspace{2ex}
+
 De specifieke werking van de intelligent traffic steering werkt op basis van DNS, we kunnen binnen de Netskope configuratie een zelfgedefinieerde URL meegeven samen met het te verwachten IP adres. Netskope zal dan deze URL opvragen aan de interne DNS server en het resultaat vergelijken met het ingestelde IP adres. Dit betekent dat we een custom DNS record zullen toevoegen aan de interne DNS server van het bedrijf. Deze DNS server is enkel en alleen bereikbaar op de sites van het bedrijf, en zo zal Netskope kunnen detecteren of een gebruiker op kantoor is of remote.
 \begin{listing}[h!]
   \begin{minted}{terraform}
@@ -106,7 +116,7 @@ Een goed geconfigureerde traffic steering-strategie biedt verschillende voordele
 
 
 \section{Netskope Cloud Access Security Broker (CASB)}
-Netskope Cloud Access Security Broker (CASB) vormt een essentieel onderdeel van de SASE-architectuur binnen het software agency, door zichtbaarheid en controle te bieden over cloudapplicaties. In tegenstelling tot traditionele beveiligingsoplossingen die vaak beperkt zijn tot netwerkperimeters, richt CASB zich specifiek op de beveiliging van cloudapplicaties en de data die daarin wordt verwerkt, ongeacht waar gebruikers zich bevinden.
+Netskope Cloud Access Security Broker (CASB) vormt een essentieel onderdeel van de SASE-architectuur, door zichtbaarheid en controle te bieden over cloudapplicaties. In tegenstelling tot traditionele beveiligingsoplossingen die vaak beperkt zijn tot netwerkperimeters, richt CASB zich specifiek op de beveiliging van cloudapplicaties en de data die daarin wordt verwerkt, ongeacht waar gebruikers zich bevinden.
 
 \subsection{Werking van Netskope CASB}
  
@@ -186,7 +196,11 @@ De implementatie van Netskope CASB voor deze cloudapplicaties heeft verschillend
 Door de implementatie van Netskope CASB is er een balans gevonden tussen het faciliteren van productieve samenwerking via cloudapplicaties en het waarborgen van de veiligheid van bedrijfskritische gegevens. Deze aanpak sluit naadloos aan bij de bredere SASE-strategie en versterkt het Zero Trust-beveiligingsmodel.
 
 \section{Zero Trust Network Access (ZTNA)}
-Netskope Zero Trust Network Access (ZTNA) vormt een essentieel onderdeel van de SASE-architectuur, waarbij de nadruk ligt op het secure-by-design principe. ZTNA biedt toegang tot applicaties zonder het volledige netwerk bloot te stellen, waarbij applicatiespecifieke toegang wordt verleend op basis van identiteit, apparaat en context. Voor ons proof of concept is gekozen voor een integratie met Okta als identiteitsprovider, om een naadloze gebruikerservaring te combineren met robuuste beveiliging.
+Netskope Zero Trust Network Access (ZTNA) vormt een essentieel onderdeel van de SASE-architectuur, waarbij de nadruk ligt op het secure-by-design principe. ZTNA biedt toegang tot applicaties zonder het volledige netwerk bloot te stellen, waarbij applicatiespecifieke toegang wordt verleend op basis van identiteit, apparaat en context. 
+
+\vspace{2ex}
+
+Voor ons proof of concept is gekozen voor een integratie met Okta als identiteitsprovider, om een naadloze gebruikerservaring te combineren met robuuste beveiliging.
 
 \subsection{Okta authenticatie en automatische configuratie}
 
@@ -216,16 +230,20 @@ Vanuit gebruikersperspectief ziet de authenticatie-workflow er als volgt uit:
     \item De gebruiker krijgt toegang tot precies die applicaties waarvoor hij/zij geautoriseerd is
 \end{enumerate}
 
-Wanneer een gebruiker een actie uitvoert die een real-time policy activeert, kan Netskope dit direct communiceren via een gebruiksvriendelijke pop-up notificatie, zie Figuur \ref{fig:user-alert}. Deze real-time feedback vormt een belangrijk educatief element binnen de SASE-implementatie.
+Wanneer een gebruiker een actie uitvoert die een real-time policy activeert, kan Netskope dit direct communiceren via een gebruiksvriendelijke pop-up notificatie, zie Figuur \ref{fig:user-alert}. 
+
+\vspace{2ex}
+
+Deze real-time feedback vormt een belangrijk educatief element binnen de SASE-implementatie.
 De pop-up notificaties worden getoond wanneer een gebruiker een actie uitvoert die tegen het ingestelde beveiligingsbeleid ingaat, zoals het uploaden van gevoelige documenten naar niet-goedgekeurde clouddiensten of het bezoeken van risicovolle websites. In plaats van simpelweg de actie te blokkeren zonder uitleg, biedt de coaching-functionaliteit context en educatie.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.7]{user-warning.png}
-    \caption[]{Voorbeeld van een pop-up notificatie in Netskope ZTNA}
+    \caption[Netskope ZTNA pop-up notificatie]{Voorbeeld van een pop-up notificatie in Netskope ZTNA}
     \label{fig:user-alert}
 \end{figure}
 
-Deze gestroomlijnde workflow zorgt ervoor dat gebruikers slechts de toegang krijgen die ze nodig hebben (least privilege principe), terwijl de administratieve overhead wordt geminimaliseerd.
+Deze gestroomlijnde workflow zorgt ervoor dat gebruikers slechts de toegang krijgen die ze nodig hebben (least privilege principe), terwijl de administratieve last wordt geminimaliseerd.
 
 \subsection{Real-Time Protection Policies}
 
@@ -258,6 +276,8 @@ Door Netskope ZTNA te implementeren met Okta wordt een belangrijke stap gezet in
 
 Een cruciaal onderdeel van de ZTNA-implementatie binnen Netskope is de beveiliging van bedrijfsapplicaties via Okta, waarbij toegang wordt beperkt tot uitsluitend verkeer dat via de Netskope Security Cloud verloopt. Deze aanpak vormt een effectieve extra beveiligingslaag die voorkomt dat gebruikers de Netskope-client kunnen omzeilen, en tevens verzekert dat alle toegang tot bedrijfsapplicaties onderworpen wordt aan de volledige reeks beveiligingscontroles.
 
+\vspace{2ex}
+
 De beveiliging van bedrijfsapplicaties via Okta en Netskope egress IP's werkt volgens het volgende principe:
 
 \begin{enumerate}
@@ -272,7 +292,7 @@ Als een medewerker op hun Okta dashboard zit en Netskope staat niet aan, dan kri
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.3]{okta-denied.png}
-    \caption[]{Voorbeeld van een melding in Okta wanneer Netskope niet is ingeschakeld}
+    \caption[Geen Netskope Okta melding]{Voorbeeld van een melding in Okta wanneer Netskope niet is ingeschakeld}
     \label{fig:okta-denied}
 \end{figure}
 
@@ -287,7 +307,7 @@ Deze integratie biedt verschillende belangrijke beveiligingsvoordelen:
     \item \textbf{Gecentraliseerde logging}: Alle toegangspogingen worden uniform gelogd binnen het Netskope platform, wat beveiligingsanalyse en incident response verbetert
 \end{itemize}
 
-Door bedrijfsapplicaties te beveiligen via Okta en Netskope egress IP's, wordt een belangrijk onderdeel van de ZTNA-architectuur geïmplementeerd dat helpt bij het realiseren van een consistent Zero Trust-model, waarbij alle toegang wordt geverifieerd, geautoriseerd en gecontroleerd, ongeacht de locatie van de gebruiker of het netwerk waarvan zij verbinding maken.
+Door bedrijfsapplicaties te beveiligen via Okta en Netskope egress IP's, wordt een belangrijk onderdeel van de ZTNA-architectuur geïmplementeerd dat helpt bij het realiseren van een consistent Zero Trust-model. Waarbij alle toegang wordt geverifieerd, geautoriseerd en gecontroleerd, ongeacht de locatie van de gebruiker of het netwerk waarvan zij verbinding maken.
 
 \section{Netskope Publisher}
 
@@ -313,7 +333,7 @@ Deze architectuur zorgt ervoor dat private applicaties onzichtbaar blijven voor 
 
 Voor onze proof of concept hebben we de Publisher geïmplementeerd in de GCP region waar de private applicaties worden gehost.
 
-
+\vspace{2ex}
 
 De implementatie van de Netskope Publisher binnen onze SASE-architectuur heeft geleid tot een aanzienlijke verbetering in zowel de beveiligingsposture als de gebruikerservaring, waarbij medewerkers nu veilig toegang hebben tot bedrijfsapplicaties vanuit elke locatie, zonder de overhead en beperkingen van traditionele VPN-oplossingen.
 
@@ -323,29 +343,37 @@ Voor de proof of concept is een Netskope Advanced Analytics dashboard (zie Figuu
 \subsection{Dashboard functionaliteiten}
 Het dashboard toont onder andere:
 \begin{itemize}
-    \item \textbf{Device Overview}: Een overzicht van alle apparaten die wel of geen verbinding hebben met de Netskope Security Cloud. Hier kan men ook zien bij hoeveel apparaten private access of internet security is ingeschakeld. Ook wordt er weergegeven hoeveel gebruikers manueel hun Netskope hebben uitgeschakeld.
-    \item \textbf{Malware}: Hier kan men zien welke malware er is gedetecteerd en de specifieke details van deze malware. Ook worden malsites weergegeven, dit zijn websites die gebruikt worden om malware te verspreiden. Uiteindelijk wordt er een trendlijn weergegeven van de aantal malware en malsites detecties over de gekozen periode.
-    \item \textbf{User Behavior Analytics (UBA)}: Hier wordt een grote flow matrix weergegeven van alle gedetecteerde gebruikersactiviteiten. Deze flows worden geleid naar het platform waar deze activiteiten zijn gedetecteerd.
-    \item \textbf{AI Usage}: Hier wordt een overzicht weergegeven van de AI-gebruik binnen het bedrijf. Er wordt getoond hoeveel gebruikers AI gebruiken en welke AI services worden gebruikt. Verder wordt er getoond wat de grootste services zijn en welke gevolgen deze hebben gegeven, dit kan gaan van een user coaching die wordt gegeven of een allow. Binnen de user coaching wordt er dan ook getoond welke actie de gebruiker heeft genomen.
+    \item \textbf{Device Overview}: Op Figuur \ref{fig:dashboard-1} wordt een overzicht gegeven van alle apparaten die wel of geen verbinding hebben met de Netskope Security Cloud. Hier kan men ook zien bij hoeveel apparaten private access of internet security is ingeschakeld. Ook wordt er weergegeven hoeveel gebruikers manueel hun Netskope hebben uitgeschakeld.
+    \item \textbf{Malware}: Op Figuur \ref{fig:dashboard-1} wordt weergegeven welke malware er is gedetecteerd en de specifieke details van deze malware. Ook worden malsites weergegeven, dit zijn websites die gebruikt worden om malware te verspreiden. Uiteindelijk wordt er een trendlijn weergegeven van de aantal malware en malsites detecties over de gekozen periode.
+    \item \textbf{User Behavior Analytics (UBA)}: Op Figuur \ref{fig:dashboard-2} wordt een grote flow matrix weergegeven van alle gedetecteerde gebruikersactiviteiten. Deze flows worden geleid naar het platform waar deze activiteiten zijn gedetecteerd.
+    \item \textbf{AI Usage}: Op Figuur \ref{fig:dashboard-3} wordt een overzicht weergegeven van de AI-gebruik binnen het bedrijf. Er wordt getoond hoeveel gebruikers AI gebruiken en welke AI services worden gebruikt. Verder wordt er getoond wat de grootste services zijn en welke gevolgen deze hebben gegeven, dit kan gaan van een user coaching die wordt gegeven of een allow. Binnen de user coaching wordt er dan ook getoond welke actie de gebruiker heeft genomen.
 \end{itemize}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{dashboard-1.png}
+    \caption[Netskope Advanced Analytics dashboard - Deel 1]{Eerste deel van het Netskope Advanced Analytics dashboard}
     \label{fig:dashboard-1}
 \end{figure}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{dashboard-2.png}
+    \caption[Netskope Advanced Analytics dashboard - Deel 2]{Tweede deel van het Netskope Advanced Analytics dashboard}
     \label{fig:dashboard-2}
 \end{figure}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{dashboard-3.png}
-    \caption[]{Netskope Advanced Analytics dashboard}
+    \caption[Netskope Advanced Analytics dashboard - Deel 3]{Derde deel van het Netskope Advanced Analytics dashboard}
     \label{fig:dashboard-3}
 \end{figure}
 
 Het dashboard wordt dagelijks gebruikt om trends te volgen, incidenten te onderzoeken en het beleid waar nodig aan te passen. Zo kan het team bijvoorbeeld bij een toename van geblokkeerde uploads naar Google Drive nagaan of de policy moet worden aangepast of dat er extra uitleg aan gebruikers nodig is.
 
+\vspace{2ex}
+
 Door deze inzichten kan het bedrijf sneller reageren op problemen en blijft de controle over de beveiliging en het gebruik van cloudapplicaties behouden. Het dashboard zorgt voor meer overzicht, snellere detectie van problemen en maakt het makkelijker om de Netskope-omgeving goed te beheren. Het helpt het IT-team om beter onderbouwde beslissingen te nemen en de beveiliging continu te verbeteren.
+
+\vspace{2ex}
+
+Het dashboard wordt wekelijks overgebracht aan het IT-team via mail. Dit zorgt ervoor dat het team altijd op de hoogte is van de laatste ontwikkelingen en trends binnen de Netskope-omgeving, en stelt hen in staat om proactief te reageren op eventuele problemen of veranderingen.
