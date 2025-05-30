@@ -5,7 +5,7 @@
 \chapter{\IfLanguageName{dutch}{Resultaten}{Results}}%
 \label{ch:resultaten}
 
-Dit hoofdstuk presenteert de concrete resultaten van de SASE-implementatie met Netskope, gebaseerd op de data die verzameld is via het Advanced Analytics dashboard (zie Figuur \ref{fig:dashboard-1}, \ref{fig:dashboard-2} en \ref{fig:dashboard-3}) gedurende de proof of concept periode van 14 weken. De resultaten tonen de effectiviteit van de geïmplementeerde beveiligingsarchitectuur binnen het bedrijf.
+Dit hoofdstuk presenteert de concrete resultaten van de SASE-implementatie met Netskope, gebaseerd op de data die is verzameld via het Advanced Analytics dashboard (zie Figuur \ref{fig:dashboard-1}, \ref{fig:dashboard-2} en \ref{fig:dashboard-3}) gedurende de proof of concept periode van 14 weken. De resultaten tonen de effectiviteit van de geïmplementeerde beveiligingsarchitectuur binnen het bedrijf.
 
 
 \section{Implementatiestrategie en Methodologie}
@@ -30,17 +30,17 @@ De SASE-implementatie werd uitgevoerd volgens een gefaseerde aanpak waarbij onde
 
 \section{Company-wide Implementatie}
 \subsection{Totale apparatenfleet}
-Het Advanced Analytics dashboard toont een company-wide implementatie van 122 apparaten verdeeld over 121 gebruikers binnen de organisatie. Deze cijfers reflecteren een groot deel van de apparatenfleet van het software agency bedrijf en vormen de basis voor de SASE-architectuur implementatie \ref{fig:dashboard-1}.
+Het Advanced Analytics dashboard(zie Figuur \ref{fig:dashboard-1}) toont een company-wide implementatie van 122 apparaten verdeeld over 121 gebruikers binnen de organisatie. Deze cijfers reflecteren een groot deel van de apparatenfleet van het software agency bedrijf en vormen de basis voor de SASE-architectuur implementatie.
 
 \subsection{Private Applicaties}
-Voor Zero Trust Network Access functionaliteit toont het dashboard dat 24,14\% van de apparaten Private Access heeft ingeschakeld, terwijl 75,86\% nog disabled staat. Deze cijfers demonstreren dat de ZTNA-component succesvol operationeel is binnen het actieve deel van de gebruikersbasis, waarbij dynamic steering voor private applicaties effectief functioneert voor zowel kantoor- als remote gebruikers \ref{fig:dashboard-1}.
+Voor Zero Trust Network Access functionaliteit toont het dashboard(zie Figuur \ref{fig:dashboard-1}) dat 24,14\% van de apparaten Private Access heeft ingeschakeld, terwijl 75,86\% nog disabled staat. Deze cijfers demonstreren dat de ZTNA-component succesvol operationeel is binnen het actieve deel van de gebruikersbasis, waarbij dynamic steering voor private applicaties effectief functioneert voor zowel kantoor- als remote gebruikers.
 
 \section{Testgroep-specifieke Implementatie}
 \subsection{Internet Security Status}
-De Internet Security status toont een beperktere implementatie met slechts 4,13\% enabled, 10,74\% in backed-off status, en 85,12\% disabled. Deze distributie bevestigt dat de SWG-functionaliteiten primair binnen de testgroep worden geëvalueerd voordat company-wide uitrol plaatsvindt. Dit komt onder ander ook door de vele problemen die de Netskope Client heeft veroorzaakt door SSL certificaat interferentie \ref{fig:dashboard-1}.
+De Internet Security status(zie Figuur \ref{fig:dashboard-1}) toont een beperktere implementatie met slechts 4,13\% enabled, 10,74\% in backed-off status, en 85,12\% disabled. Deze distributie bevestigt dat de SWG-functionaliteiten primair binnen de testgroep worden geëvalueerd voordat company-wide uitrol plaatsvindt. Dit komt onder ander ook door de vele problemen die de Netskope Client heeft veroorzaakt door SSL certificaat interferentie.
 
 \subsection{Malware en Threat Protection}
-Gedurende de evaluatieperiode heeft het Netskope platform geen malware-instanties gedetecteerd binnen de geactiveerde scope, zoals weergegeven door de "0 Malware Detected" metric. Dit kan duiden op een effectieve preventieve beveiliging of een relatief schone testomgeving \ref{fig:dashboard-1}.
+Gedurende de evaluatieperiode heeft het Netskope platform geen malware-instanties gedetecteerd binnen de geactiveerde scope, zoals weergegeven door de "0 Malware Detected"(zie Figuur \ref{fig:dashboard-1}) metric. Dit kan duiden op een effectieve preventieve beveiliging of een relatief schone testomgeving.
 
 \subsection{Malicious Sites Blocking}
 Het systeem heeft 3 malicious sites succesvol geblokkeerd gedurende de testperiode, met specifieke detecties op de volgende data:
@@ -49,19 +49,19 @@ Het systeem heeft 3 malicious sites succesvol geblokkeerd gedurende de testperio
     \item 8 mei 2025: inc-com.info/BaseSyst... (1 alert, 1 user)
     \item 7 mei 2025: sec-content.co.uk/sss... (1 alert, 1 user)
 \end{itemize}
-Deze geblokkeerde sites tonen aan dat de threat intelligence feeds effectief functioneren en real-time bescherming bieden tegen bekende malicious domains \ref{fig:dashboard-1}.
+Deze geblokkeerde sites tonen aan dat de threat intelligence feeds effectief functioneren en real-time bescherming bieden tegen bekende malicious domains (Zie Figuur \ref{fig:dashboard-1}).
 
 \subsection{Data Loss Prevention (DLP)}
-Binnen de testgroep heeft het DLP-systeem 2 gebruikers met DLP violations geïdentificeerd, resulterend in 1 bestand met DLP violations. Deze cijfers demonstreren dat het DLP-beleid actief monitort en potentiële data-exfiltratie detecteert zonder de workflow significant te verstoren \ref{fig:dashboard-2}.
+Binnen de testgroep heeft het DLP-systeem 2 gebruikers met DLP violations geïdentificeerd, resulterend in 1 bestand met DLP violations. Deze cijfers (Zie Figuur \ref{fig:dashboard-2}) demonstreren dat het DLP-beleid actief monitort en potentiële data-exfiltratie detecteert zonder de workflow significant te verstoren.
 
 \vspace{2ex}
 
-De DLP Policy Alerts tonen de volgende severity-niveaus
+De DLP Policy Alerts (Zie Figuur \ref{fig:dashboard-2}) tonen de volgende severity-niveaus
 \begin{itemize}
     \item Medium risico: 30.77\% van de alerts
     \item Low risico: 23.08\% van de alerts
 \end{itemize}
-Deze verdeling suggereert dat het grootste deel van de DLP-activiteit zich in de medium-risk categorie bevindt \ref{fig:dashboard-2}.
+Deze verdeling suggereert dat het grootste deel van de DLP-activiteit zich in de medium-risk categorie bevindt. Er is ook nog een ongekend security niveau. Dit wilt zeggen dat Netskope nog niet lang genoeg actief is om deze risico's te kunnen categoriseren. Wat we wel al kunnen opmerken is dat er nog geen high-risk alerts zijn gedetecteerd, wat een positief teken is voor de huidige DLP-configuratie.
 
 \subsection{User Behavior Analytics (UBA)}
 De UBA-component heeft uitgebreide gebruikersactiviteit gemonitord via de flow matrix visualisatie, waarbij verschillende categorieën van user behavior worden getracked:
@@ -113,8 +113,37 @@ De Action Taken analysis toont diverse policy responses:
 \end{itemize}
 
 \section{Conclusie}
-Het dashboard demonstreert een gefaseerde maar effectieve SASE-implementatie, waarbij company-wide Private Access deployment succesvol verloopt, samen met intensieve validatie van SWG/CASB functionaliteiten aan de hand van een testgroep. De beveiligingsmetrieken tonen proactieve threat detection (3 malicious sites blocked), effectieve DLP coverage (2 violations detected), en waardevolle business intelligence over AI-usage patterns.
+Het dashboard toont een gefaseerde en effectieve SASE-implementatie. De company-wide Private Access deployment verloopt succesvol. Daarnaast vindt intensieve validatie van SWG/CASB functionaliteiten plaats via een testgroep. De beveiligingsmetrieken tonen proactieve threat detection (3 malicious sites blocked), effectieve DLP coverage (2 violations detected), en waardevolle business intelligence over AI-usage patterns.
 
 \vspace{2ex}
 
 Deze resultaten vormen een solide basis voor de aanbeveling tot volledige productie-implementatie van alle SASE-componenten.
+
+\section{Interview}
+In de laatste weken van de bachelorproef heeft er een interview plaatsgevonden met de verantwoordelijke van team IT. Dit interview was gericht om feedback over de proof of concept en de implementatie van de SASE-architectuur te krijgen. De feedback was overwegend positief, waarbij de nadruk lag op de verbeterde beveiliging en gebruikerservaring die de Netskope-oplossing biedt. 
+
+\subsection{Requirements}
+Samen zijn de requirements overlopen geweest om concreet te bekijken welke requirements(zie Hoofdstuk \ref{ch:requirements analyse}) niet volledig geïmplementeerd waren. De belangrijkste punten die naar voren kwamen zijn:
+\begin{itemize}
+    \item De \textbf{Netskope client} requirement, is gehaald. Uitgezonderd een paar edge cases.
+    \item De \textbf{DLP requirement}, is grotendeels af. UEBA en CASB API zijn geïmplementeerd, en de DLP policies zijn aangemaakt. Echter, zijn ze niet allemaal getest geweest. In de resultaten kan men zien dat er 3 DLP alerts zijn gegenereerd, wat al wijst op een goede basis.
+    \item De requirement rond het behouden van \textbf{privacy} is ook gehaald. Privacy wordt gewaarborgd door obfuscatie van data dat gelinkt kan worden aan individuele gebruikers. Doorheen het platform kan men geen data zien die gelinkt is aan een specifieke gebruiker. Dit is ook gecommuniceerd naar de werknemers.
+    \item \textbf{Secure access} is ook gehaald. De Netskope client zorgt ervoor dat alle werknemers toegang hebben tot de interne applicaties, ongeacht hun locatie. Dit is ook getest geweest met remote werknemers.
+    \item \textbf{Bedrijfsgerichte policies} zijn aangemaakt en getest. Er zijn policies aangemaakt die specifiek gericht zijn op het bedrijf, zoals het blokkeren van bepaalde websites en het beperken van het aantal gebruikte apps. Deze policies zijn ook getest geweest en werken zoals verwacht.
+    \item Er is ook \textbf{gepaste documentatie} gemaakt voor de werknemers. Deze documentatie is gericht op het uitleggen van de implementatie en hoe deze hen beschermt tegen cyberdreigingen. Ook is er een duidelijk proces uitgewerkt voor medewerkers om false flags te melden.
+\end{itemize}
+
+\subsection{Reflectie}
+Er is besproken geweest wat men anders zou doen moesten we herbeginnen.
+De belangrijkste punten die naar voren kwamen zijn:
+\begin{itemize}
+    \item De test groep eerder uitrollen, en de Internet Security eerder activeren binnen de testgroep. Dit om zo sneller feedback te krijgen over de problemen gebruikerservaring.
+    \item Eerder tijd besteden aan het communiceren van de implementatie naar de werknemers, om zo de acceptatie van Netskope te verhogen. 
+\end{itemize}
+
+\subsection{Tekortkomingen}
+Er zijn ook een aantal tekortkomingen naar voren gekomen tijdens het interview:
+\begin{itemize}
+    \item Momenteel wordt enkel HTTP/HTTPS verkeer geanalyseerd, wat betekent dat andere protocollen zoals FTP of SSH niet worden gemonitord. Dit zorgt er voor dat apps zoals ChatGPT of Perplexity AI niet volledig worden gemonitord, omdat deze gebruik maken van andere protocollen. De oplossing hiervoor is om al het verkeer door Netskope te laten lopen, maar dit was niet haalbaar binnen deze timeframe.
+    \item De acceptatie van de werknemers voor de Netskope client is lager dan verwacht. Dit komt voornamelijk door de werking van de client, die werkt als . Dit kan leiden tot wantrouwen en weerstand tegen de implementatie.
+\end{itemize}
